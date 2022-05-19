@@ -1,0 +1,79 @@
+@import './variables.scss';
+// Welcome Section
+.oqpai-home__section {
+    width: 100%;
+    height: calc(100vh - 10vh);
+    background: url('../assets/welcome/welcome-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .oqpai-welcome__content {
+        width: 80%;
+        .col-left {
+            h3 {
+                color: $secondaryColor;
+                font-size: 2.5rem;
+                line-height: 3rem;
+                font-weight: bold;
+            }
+            h1 {
+                color: $primaryColor;
+                font-size: 4rem;
+                line-height: 5rem;
+                font-weight: bold;
+            }
+            p {
+                color: $primaryColor;
+                font-size: 2rem;
+                margin-top: 1rem;
+            }
+        }
+        .download__apps {
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            img {
+                cursor: pointer;
+                width: 45%;
+                &:nth-child(1) {
+                    margin-right: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+// Intro Section
+.oqpai-intro__section {
+    width: 100%;
+    height: calc(100vh - 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    .oqpai-intro__header {
+        margin-top: 2rem;
+        text-align: center;
+        h1 {
+            color: $primaryColor;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.6rem;
+            margin-top: 0.7rem;
+            color: $paragraphTextColor;
+        }
+    }
+    .oqpai-intro__steps {
+        width: 100%;
+        .wave {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
