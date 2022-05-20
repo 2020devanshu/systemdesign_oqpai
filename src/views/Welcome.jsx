@@ -2,6 +2,7 @@ import React from 'react'
 import appstore from '../assets/welcome/app_store.png';
 import googleplay from '../assets/welcome/google_play.png';
 import wave from '../assets/welcome/intro_wave.png';
+import appDownload from '../assets/welcome/app_download.png'
 import '../styles/Welcome.scss';
 
 const Welcome = () => {
@@ -33,6 +34,33 @@ const Welcome = () => {
 
                 <div className="oqpai-intro__steps">
                     <img className='wave' src={wave} alt="wave" />
+                </div>
+            </section>
+            {/* Download App */}
+            <section className="oqpai-download__app">
+                <div className="oqpai-into__header">
+                    <h1>We'll Make It Easy</h1>
+                    <p>Download Our App</p>
+                </div>
+                <img src={appDownload} alt="App Download" />
+            </section>
+            {/* Our PLans */}
+            <section className="oqpai-our__plans">
+                <div className="oqpai-plans__header">
+                    <h1>Our Plans</h1>
+                    <p>We Have Plans For Every Need</p>
+                </div>
+                <div className="oqpai-plans">
+                    <div className='card'>
+                        <img src="" alt="" />
+                    </div>
+                </div>
+            </section>
+            {/* Secure and Safe */}
+            <section className="oqpai-secure__safe">
+                <div className="oqpai-secure-safe__header">
+                    <h1>Secure And Safe</h1>
+                    <p>Your Luggage Is Our Responsibilty</p>
                 </div>
             </section>
         </div>

@@ -1,3 +1,4 @@
+@import './styles/fonts.scss';
 * {
     margin: 0;
     padding: 0;
@@ -7,5 +8,5 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'DejaVu Sans';
 }
