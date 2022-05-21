@@ -23,7 +23,9 @@ header {
     display: grid;
     place-items: center;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    z-index: 5;
     nav {
         width: 80%;
         margin: auto;
@@ -80,5 +82,17 @@ header {
         &:active {
             transform: translateY(2px);
         }
+    }
+}
+
+@media screen and (max-width: 909px) {
+    header {
+        background-color: rgba($color: #fff, $alpha: 0.8);
+        nav {
+            width: 90%;
+        }
+    }
+    .oqpai-links {
+        display: none;
     }
 }

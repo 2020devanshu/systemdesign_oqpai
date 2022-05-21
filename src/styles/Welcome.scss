@@ -8,17 +8,44 @@
     justify-content: space-around;
     flex-direction: column;
     text-align: center;
-    h1 {
-        color: $primaryColor;
-        font-size: 3rem;
-    }
-    p {
-        font-size: 1.6rem;
-        margin-top: 0.7rem;
-        color: $paragraphTextColor;
+    .header {
+        margin-top: 2rem;
+        text-align: center;
+        text-transform: capitalize;
+        h1 {
+            color: $primaryColor;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.6rem;
+            margin-top: 0.7rem;
+            color: $paragraphTextColor;
+        }
     }
     img {
         width: $imageWidth;
+    }
+}
+
+@mixin card {
+    position: relative;
+    background: $secondaryGradient;
+    height: 14.688rem;
+    width: 17rem;
+    border-radius: 1.584rem;
+    overflow: visible;
+    h6 {
+        position: absolute;
+        font-size: 1.1rem;
+        bottom: 2.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    img {
+        position: absolute;
+        top: -5rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -108,10 +135,71 @@
 
 // Our Plans
 .oqpai-our__plans {
-    @include sectionDesign(0%);
+    @include sectionDesign(auto);
+    .oqpai-plans {
+        // overflow-x: 
+        height: 20rem;
+        display: grid;
+        align-items: end;
+        width: 80%;
+        .card {
+            @include card();
+        }
+    }
 }
 
 // Secure and Safe
 .oqpai-secure__safe {
+    @include sectionDesign(auto);
+    .oqpai-cards {
+        // overflow-x: 
+        height: 20rem;
+        display: grid;
+        align-items: end;
+        width: 80%;
+        .card {
+            @include card();
+        }
+    }
+}
+
+// Our Pricing
+.oqpai-our__pricing {
+    @include sectionDesign(auto);
+    .oqpai-cards {
+        // overflow-x: 
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        .pricing__card {
+            background: $primaryGradient;
+            height: 14.688rem;
+            width: 17rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 1.584rem;
+            h6 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+            &:first-child {
+                border-bottom-left-radius: 7rem;
+            }
+            &:last-child {
+                border-bottom-right-radius: 7rem;
+            }
+        }
+    }
+}
+
+.oqpai-reviews {
     @include sectionDesign(auto);
 }

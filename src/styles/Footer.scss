@@ -1,0 +1,43 @@
+@import "./variables.scss";
+footer {
+    width: 100%;
+    padding: 3rem 5rem;
+    background: $primaryGradient;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .oqpai-footer__colLeft {
+        display: flex;
+        .footer-thank__you {
+            width: 10rem;
+        }
+        .oqpai-footer__colLeft_content {
+            margin-left: 1.5em;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .footer-logo__container {
+                .footer-logo {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $secondaryColor;
+                    span {
+                        color: $primaryColor;
+                    }
+                }
+                p {
+                    color: #fff;
+                }
+            }
+            .footer-appLinks__container {
+                .footer-app__download {
+                    display: flex;
+                    img {
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
