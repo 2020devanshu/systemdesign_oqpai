@@ -120,10 +120,58 @@
     }
     .oqpai-intro__steps {
         width: 100%;
-        .wave {
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../assets/welcome/intro_wave.png');
+        .oqpai-intro__stepsContent {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            .intro-card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 80%;
+                }
+                h6 {
+                    color: $primaryColor;
+                    font-size: 1.2rem;
+                }
+                .hover-card {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    width: 13rem;
+                    padding: 1rem;
+                    border-radius: 1.584rem;
+                    opacity: 0;
+                    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.05);
+                    transition: all .5s ease-in-out;
+                    user-select: none;
+                    h4 {
+                        color: $primaryColor;
+                        font-size: 1rem;
+                        text-align: center;
+                        margin-bottom: 0.6rem;
+                    }
+                    p {
+                        text-align: center;
+                        color: #6B6B6B;
+                        font-size: 0.7rem;
+                    }
+                }
+                &:hover {
+                    .hover-card {
+                        opacity: 1;
+                    }
+                }
+            }
         }
     }
 }
@@ -157,6 +205,7 @@
         display: grid;
         align-items: end;
         width: 80%;
+        overflow: hidden;
         .card {
             @include card();
         }

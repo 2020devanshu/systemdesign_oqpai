@@ -10,6 +10,10 @@ import bag1 from '../assets/welcome/bags/lug1.png'
 import bag2 from '../assets/welcome/bags/lug2.png'
 import bag3 from '../assets/welcome/bags/lug3.png'
 import bag4 from '../assets/welcome/bags/lug4.png'
+import intro1 from '../assets/welcome/intro/intro1.png'
+import intro2 from '../assets/welcome/intro/intro2.png'
+import intro3 from '../assets/welcome/intro/intro3.png'
+import intro4 from '../assets/welcome/intro/intro4.png'
 import '../styles/Welcome.scss';
 
 const responsiveCard = {
@@ -64,7 +68,40 @@ const Welcome = () => {
                 </div>
 
                 <div className="oqpai-intro__steps">
-                    <img className='wave' src={wave} alt="wave" />
+                    <div className="oqpai-intro__stepsContent">
+                        <div className="intro-card">
+                            <img src={intro1} alt="" />
+                            <h6>1.Book</h6>
+                            <div className="hover-card">
+                                <h4>1.Book</h4>
+                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                            </div>
+                        </div>
+                        <div className="intro-card">
+                            <img src={intro2} alt="" />
+                            <h6>1.Book</h6>
+                            <div className="hover-card">
+                                <h4>1.Book</h4>
+                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                            </div>
+                        </div>
+                        <div className="intro-card">
+                            <img src={intro3} alt="" />
+                            <h6>1.Book</h6>
+                            <div className="hover-card">
+                                <h4>1.Book</h4>
+                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                            </div>
+                        </div>
+                        <div className="intro-card">
+                            <img src={intro4} alt="" />
+                            <h6>1.Book</h6>
+                            <div className="hover-card">
+                                <h4>1.Book</h4>
+                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             {/* Download App */}
@@ -106,7 +143,7 @@ const Welcome = () => {
                     <h1>Secure And Safe</h1>
                     <p>Your Luggage Is Our Responsibilty</p>
                 </div>
-                <OwlCarousel {...responsiveCard} className='oqpai-cards'>
+                <OwlCarousel loop {...responsiveCard} className='oqpai-cards'>
                     <div className='card'>
                         <img src={bag1} alt="Bag 1" />
                         <h6>Hourly</h6>
