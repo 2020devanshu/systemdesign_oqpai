@@ -14,12 +14,25 @@ import intro1 from '../assets/welcome/intro/intro1.png'
 import intro2 from '../assets/welcome/intro/intro2.png'
 import intro3 from '../assets/welcome/intro/intro3.png'
 import intro4 from '../assets/welcome/intro/intro4.png'
+import secure1 from '../assets/welcome/secure/1.png';
+import secure2 from '../assets/welcome/secure/2.png';
+import secure3 from '../assets/welcome/secure/3.png';
+import secure4 from '../assets/welcome/secure/4.png';
+import secure5 from '../assets/welcome/secure/5.png';
+import secure6 from '../assets/welcome/secure/6.png';
+import secure7 from '../assets/welcome/secure/7.png';
+import review from '../assets/welcome/review.png';
+import star from '../assets/Icon.png';
 import '../styles/Welcome.scss';
 
 const responsiveCard = {
     margin: 20,
     responsiveClass: true,
+    loop: true,
     autoplay: false,
+    nav: true,
+    navClass: "dot",
+    navText: ["Mext", "Prev"],
     responsive: {
         0: {
             items: 1,
@@ -38,6 +51,33 @@ const responsiveCard = {
         }
     }
 }
+const responsiveReviewCard = {
+    margin: 20,
+    responsiveClass: true,
+    loop: true,
+    autoplay: false,
+    nav: true,
+    navClass: "dot",
+    navText: ["Mext", "Prev"],
+    responsive: {
+        0: {
+            items: 1,
+        },
+        400: {
+            items: 1,
+        },
+        600: {
+            items: 2,
+        },
+        700: {
+            items: 3,
+        },
+        1000: {
+            items: 2.7,
+        }
+    }
+}
+
 
 
 const Welcome = () => {
@@ -143,22 +183,34 @@ const Welcome = () => {
                     <h1>Secure And Safe</h1>
                     <p>Your Luggage Is Our Responsibilty</p>
                 </div>
-                <OwlCarousel loop {...responsiveCard} className='oqpai-cards'>
+                <OwlCarousel {...responsiveCard} className='oqpai-cards owl-theme'>
                     <div className='card'>
-                        <img src={bag1} alt="Bag 1" />
-                        <h6>Hourly</h6>
+                        <img src={secure1} alt="Bag 1" />
+                        <h6>Certified Luggage Storage</h6>
                     </div>
                     <div className='card'>
-                        <img src={bag2} alt="Bag 2" />
-                        <h6>Daily</h6>
+                        <img src={secure2} alt="Bag 2" />
+                        <h6>Certified Luggage Storage</h6>
                     </div>
                     <div className='card'>
-                        <img src={bag3} alt="Bag 3" />
-                        <h6>Weekly</h6>
+                        <img src={secure3} alt="Bag 3" />
+                        <h6>Certified Luggage Storage</h6>
                     </div>
                     <div className='card'>
-                        <img src={bag4} alt="Bag 4" />
-                        <h6>Monthly</h6>
+                        <img src={secure4} alt="Bag 4" />
+                        <h6>Certified Luggage Storage</h6>
+                    </div>
+                    <div className='card'>
+                        <img src={secure5} alt="Bag 4" />
+                        <h6>Certified Luggage Storage</h6>
+                    </div>
+                    <div className='card'>
+                        <img src={secure6} alt="Bag 4" />
+                        <h6>Certified Luggage Storage</h6>
+                    </div>
+                    <div className='card'>
+                        <img src={secure7} alt="Bag 4" />
+                        <h6>Certified Luggage Storage</h6>
                     </div>
                 </OwlCarousel>
             </section>
@@ -193,6 +245,20 @@ const Welcome = () => {
                     <h1>We Love Travelers, Travelers Love Us!</h1>
                     <p>What our users say about OQPAI</p>
                 </div>
+                <OwlCarousel {...responsiveReviewCard} className='oqpai-cards owl-theme'>
+                    <div className='reviewCard'>
+                        <img className='profile' src={review} alt="Bag 1" />
+                        <h6>Riya Agarwal</h6>
+                        <div className="review-stars">
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
+                    </div>
+                </OwlCarousel>
             </section>
         </div>
     )

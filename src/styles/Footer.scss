@@ -7,6 +7,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     .oqpai-footer__colLeft {
+        width: 40%;
         display: flex;
         .footer-thank__you {
             width: 10rem;
@@ -31,11 +32,61 @@ footer {
                 }
             }
             .footer-appLinks__container {
+                p {
+                    font-size: 1.1rem;
+                    color: #fff;
+                }
                 .footer-app__download {
+                    margin-top: 1rem;
                     display: flex;
                     img {
-                        height: 2rem;
+                        height: 2.3rem;
+                        cursor: pointer;
+                        &:nth-child(2) {
+                            margin-left: 0.8rem;
+                        }
                     }
+                }
+            }
+        }
+    }
+    .oqpai-footer__colRight {
+        width: 40%;
+        gap: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            li {
+                color: #fff;
+            }
+        }
+        .footer-button {
+            background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+            outline: none;
+            border: none;
+            color: #0B6EFD;
+            padding: 0.55rem 1.134rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+            &:active {
+                transform: translateY(2px);
+            }
+        }
+        .footer-connect {
+            p {
+                color: #fff;
+            }
+            .footer-social-links {
+                display: flex;
+                margin-top: 1rem;
+                gap: 2rem;
+                img {
+                    width: 2rem;
                 }
             }
         }
