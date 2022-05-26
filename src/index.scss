@@ -10,8 +10,15 @@
 body {
     background-color: #f0f0f052;
     font-family: 'DejaVu Sans';
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .owl-carousel .owl-stage-outer {
     overflow: visible;
+}
+
+.oqpai-homepage {
+    width: 100vw;
+    overflow: hidden;
 }
