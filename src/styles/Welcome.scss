@@ -120,6 +120,7 @@
 }
 
 @mixin mobileIntro {
+    display: none;
     margin: 2rem 0;
     .even {
         display: flex;
@@ -180,6 +181,9 @@
                 color: #404040;
             }
         }
+    }
+    @media screen and (max-width:909px) {
+        display: block;
     }
 }
 
