@@ -92,3 +92,16 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 909px) {
+    footer {
+        padding: 1rem;
+        flex-direction: column-reverse;
+        .oqpai-footer__colLeft {
+            display: none;
+        }
+        .oqpai-footer__colRight {
+            display: none;
+        }
+    }
+}

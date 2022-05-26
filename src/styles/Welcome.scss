@@ -25,6 +25,18 @@
     img {
         width: $imageWidth;
     }
+    @media screen and (max-width: 909px) {
+        height: auto;
+        .header {
+            width: 90%;
+            h1 {
+                font-size: 1.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
 }
 
 @mixin reviewCard {
@@ -62,6 +74,17 @@
         font-weight: 300;
         margin-top: 1rem;
     }
+    @media screen and (max-width: 909px) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+        .profile {
+            width: 100px;
+            top: -3rem;
+        }
+        h6 {
+            margin-top: 2rem;
+        }
+    }
 }
 
 @mixin card {
@@ -85,6 +108,78 @@
         top: -4rem;
         left: 50%;
         transform: translateX(-50%);
+    }
+    @media screen and (max-width: 909px) {
+        width: auto;
+        height: auto;
+        padding: 5.2rem 2rem;
+        img {
+            top: -2rem;
+        }
+    }
+}
+
+@mixin mobileIntro {
+    margin: 2rem 0;
+    .even {
+        display: flex;
+        position: relative;
+        height: 20rem;
+        img {
+            position: absolute;
+            width: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content {
+            position: relative;
+            width: 45%;
+            left: 7%;
+            top: 80%;
+            transform: translateY(-50%);
+            h2 {
+                font-size: 1.4rem;
+                color: $primaryColor;
+                text-align: end;
+            }
+            p {
+                text-align: end;
+                font-size: 0.9rem;
+                margin-top: 0.2rem;
+                color: #404040;
+            }
+        }
+    }
+    .odd {
+        display: flex;
+        position: relative;
+        height: 18rem;
+        img {
+            position: absolute;
+            width: 50%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content {
+            position: absolute;
+            width: 45%;
+            right: 7%;
+            top: 50%;
+            transform: translateY(-50%);
+            h2 {
+                font-size: 1.4rem;
+                color: $primaryColor;
+                text-align: start;
+            }
+            p {
+                text-align: start;
+                font-size: 0.9rem;
+                margin-top: 0.2rem;
+                color: #404040;
+            }
+        }
     }
 }
 
@@ -156,6 +251,9 @@
             margin-top: 0.7rem;
             color: $paragraphTextColor;
         }
+    }
+    .oqpai-intro__mobile {
+        @include mobileIntro();
     }
     .oqpai-intro__steps {
         width: 100%;
@@ -261,14 +359,14 @@
     .oqpai-cards {
         // overflow-x: 
         height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.6rem;
         width: 80%;
         .pricing__card {
             background: $primaryGradient;
             height: 14.688rem;
-            width: 17rem;
+            width: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -304,6 +402,110 @@
         overflow: hidden;
         .reviewCard {
             @include reviewCard();
+        }
+    }
+}
+
+@media screen and (max-width: 909px) {
+    .oqpai-home__section {
+        background: url('../assets/welcome/welcome-mobile.png');
+        flex-direction: column;
+        background-size: cover;
+        justify-content: end;
+        height: 60vh;
+        .oqpai-welcome__content {
+            width: 90%;
+            .col-left {
+                margin-bottom: 2rem;
+                text-align: center;
+                h3 {
+                    font-size: 1.3rem;
+                    line-height: normal;
+                }
+                h1 {
+                    font-size: 1.8rem;
+                    line-height: normal;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .download__apps {
+                margin-top: 1.3rem;
+                img {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    .oqpai-intro__section {
+        height: auto;
+        .oqpai-intro__header {
+            width: 90%;
+            h1 {
+                font-size: 1.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+        .oqpai-intro__steps {
+            display: none;
+        }
+    }
+    .oqpai-our__plans {
+        .oqpai-plans {
+            width: 90%;
+            margin: 2rem 0;
+            display: flex;
+            height: 13rem;
+        }
+    }
+    .oqpai-secure__safe {
+        .oqpai-cards {
+            width: 90%;
+            margin: 2rem 0;
+            display: flex;
+            height: 13rem;
+        }
+    }
+    .oqpai-download__app {
+        @include sectionDesign(80%);
+        img {
+            margin: 2rem 0;
+        }
+    }
+    .oqpai-our__pricing {
+        .oqpai-cards {
+            margin: 3rem 0;
+            gap: 0.8rem;
+            grid-template-columns: repeat(2, 1fr);
+            .pricing__card {
+                height: auto;
+                padding: 2rem;
+                border-radius: 1rem;
+                h6 {
+                    font-size: 0.8rem;
+                }
+                p {
+                    font-size: 1.4rem;
+                }
+                &:first-child {
+                    border-top-left-radius: 3rem;
+                    border-bottom-left-radius: 1rem;
+                }
+                &:nth-child(2) {
+                    border-top-right-radius: 3rem;
+                    border-bottom-left-radius: 1rem;
+                }
+                &:nth-child(3) {
+                    border-bottom-left-radius: 3rem;
+                    // border-bottom-left-radius: 1rem;
+                }
+                &:last-child {
+                    border-bottom-right-radius: 3rem;
+                }
+            }
         }
     }
 }

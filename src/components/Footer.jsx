@@ -11,6 +11,9 @@ import '../styles/Footer.scss'
 const Footer = () => {
     return (
         <footer>
+            <div className="footer-mobile__content">
+                .
+            </div>
             <div className="oqpai-footer__colLeft">
                 <img className='footer-thank__you' src={thankYou} alt="Thank You" />
                 <div className="oqpai-footer__colLeft_content">
@@ -52,4 +55,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;

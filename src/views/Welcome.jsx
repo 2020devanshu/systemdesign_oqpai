@@ -14,6 +14,8 @@ import intro1 from '../assets/welcome/intro/intro1.png'
 import intro2 from '../assets/welcome/intro/intro2.png'
 import intro3 from '../assets/welcome/intro/intro3.png'
 import intro4 from '../assets/welcome/intro/intro4.png'
+import mobile1 from '../assets/welcome/intro/mobile1.png';
+import mobile4 from '../assets/welcome/intro/mobile4.png';
 import secure1 from '../assets/welcome/secure/1.png';
 import secure2 from '../assets/welcome/secure/2.png';
 import secure3 from '../assets/welcome/secure/3.png';
@@ -26,7 +28,7 @@ import star from '../assets/Icon.png';
 import '../styles/Welcome.scss';
 
 const responsiveCard = {
-    margin: 20,
+    margin: 10,
     responsiveClass: true,
     loop: true,
     autoplay: false,
@@ -38,7 +40,7 @@ const responsiveCard = {
             items: 1,
         },
         400: {
-            items: 1,
+            items: 2.2,
         },
         600: {
             items: 2,
@@ -105,6 +107,37 @@ const Welcome = () => {
                 <div className='oqpai-intro__header header'>
                     <h1>Now Travel Luggage Free</h1>
                     <p>Use OQPAI In just "4 Easy Steps"</p>
+                </div>
+
+                <div className="oqpai-intro__mobile">
+                <div className="odd">
+                        <img src={mobile1} alt="" />
+                        <div className="content">
+                            <h2>4.Drop Off</h2>
+                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                        </div>
+                    </div>
+                    <div className="even">
+                        <img src={mobile4} alt="" />
+                        <div className="content">
+                            <h2>4.Drop Off</h2>
+                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                        </div>
+                    </div>
+                    <div className="odd">
+                        <img src={mobile1} alt="" />
+                        <div className="content">
+                            <h2>4.Drop Off</h2>
+                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                        </div>
+                    </div>
+                    <div className="even">
+                        <img src={mobile4} alt="" />
+                        <div className="content">
+                            <h2>4.Drop Off</h2>
+                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="oqpai-intro__steps">
