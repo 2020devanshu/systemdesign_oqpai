@@ -12,7 +12,30 @@ const Footer = () => {
     return (
         <footer>
             <div className="footer-mobile__content">
-                .
+                <ul className="links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Career</a></li>
+                    <li><a href="/">Contact Us</a></li>
+                    <button>Become a Partner</button>
+                </ul>
+                <div className="logo">
+                    <a href="/">O<span>Q</span>PAI</a>
+                </div>
+                <p>Id massa sapien mattis id a massa amet. Sed interdum non habitant ultrices mi urna ullamcorper faucibus a. Enim lectus.</p>
+                <div className="footer-appLinks__container">
+                    <p>Download The APP From</p>
+                    <div className="footer-app__download">
+                        <img src={appstore} alt="Apple Store" />
+                        <img src={googleplay} alt="Google Play Store" />
+                    </div>
+                </div>
+                <div className="footer-social-links">
+                    <img src={Facebook} alt="Facebook" />
+                    <img src={Instagram} alt="Facebook" />
+                    <img src={Linkedin} alt="Facebook" />
+                    <img src={Youtube} alt="Facebook" />
+                </div>
             </div>
             <div className="oqpai-footer__colLeft">
                 <img className='footer-thank__you' src={thankYou} alt="Thank You" />
@@ -39,7 +62,7 @@ const Footer = () => {
                     <li>Contact Us</li>
                 </ul>
                 <div>
-                <button className='footer-button'>Become a Partners</button>
+                    <button className='footer-button'>Become a Partners</button>
                 </div>
                 <div className="footer-connect">
                     <p>Connect With Us On</p>

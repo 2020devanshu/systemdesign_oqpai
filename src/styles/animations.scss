@@ -1,0 +1,11 @@
+@keyframes cardFloating {
+    0% {
+        transform: translate(-50%, -0.9rem);
+    }
+    50% {
+        transform: translate(-50%, 0rem);
+    }
+    100% {
+        transform: translate(-50%, -0.9rem);
+    }
+}

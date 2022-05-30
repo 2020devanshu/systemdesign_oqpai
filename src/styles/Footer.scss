@@ -91,12 +91,89 @@ footer {
             }
         }
     }
+    .footer-mobile__content {
+        display: none;
+        .links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            a {
+                font-size: 0.8rem;
+                color: white;
+            }
+            button {
+                background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+                outline: none;
+                border: none;
+                color: #0B6EFD;
+                padding: 0.3rem 0.7rem;
+                border-radius: 10px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
+                &:active {
+                    transform: translateY(2px);
+                }
+            }
+        }
+        .logo {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+            a {
+                color: black;
+            }
+            span {
+                color: $primaryColor;
+            }
+        }
+        p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: white;
+        }
+        .footer-appLinks__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            p {
+                font-weight: bold;
+            }
+            .footer-app__download {
+                margin-top: 0.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.7rem;
+                img {
+                    width: 30%;
+                }
+            }
+        }
+        .footer-social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            img {
+                width: 1.7rem;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 909px) {
     footer {
         padding: 1rem;
         flex-direction: column-reverse;
+        .footer-mobile__content {
+            display: block;
+        }
         .oqpai-footer__colLeft {
             display: none;
         }
