@@ -22,14 +22,15 @@ const Navbar = () => {
     }
     
   return (
-    <header>
+    <>
+        <header>
         <nav>
             <a className='oqpai-logo' href="/">O<span>Q</span>PAI</a>
             <div className='oqpai-links'>
                 <ul className='oqpai-nav-links'>
                     <li><a className='active' href="/">Home</a></li>
                     <li><a href="/">About</a></li>
-                    <li><a href="/">Career</a></li>
+                    <li><a href="/carrer">Career</a></li>
                     <li><a href="/">Contact Us</a></li>
                 </ul>
                 <button className="oqpai-partner">
@@ -41,7 +42,9 @@ const Navbar = () => {
                 <img className='menu' src={menu} alt="Menu" />
             </div>
         </nav>
-        <div className="mobile-overlay">
+        
+    </header>
+    <div className="mobile-overlay">
 
         </div>
         <div className="mobile-menu">
@@ -68,7 +71,7 @@ const Navbar = () => {
                 </li>
             </ul>
         </div>
-    </header>
+    </>
   )
 }
 

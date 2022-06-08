@@ -1,0 +1,342 @@
+@import './variables.scss';
+@mixin sectionDesign($imageWidth) {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    .header {
+        margin-top: 2rem;
+        text-align: center;
+        text-transform: capitalize;
+        h1 {
+            color: $primaryColor;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.6rem;
+            margin-top: 0.7rem;
+            color: $paragraphTextColor;
+        }
+    }
+    img {
+        width: $imageWidth;
+    }
+    @media screen and (max-width: 909px) {
+        height: auto;
+        .header {
+            width: 90%;
+            h1 {
+                font-size: 1.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@mixin reviewCard {
+    position: relative;
+    width: auto;
+    // height: 292px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 25.3423px;
+    padding: 3rem 5rem;
+    margin-bottom: 2rem;
+    color: #404040;
+    .profile {
+        position: absolute;
+        top: -4rem;
+        width: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .review-stars {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        justify-content: center;
+        margin-top: 1rem;
+        .star {
+            width: 16px;
+        }
+    }
+    h6 {
+        margin-top: 1.3rem;
+        font-size: 1.3rem;
+    }
+    p {
+        font-weight: 300;
+        margin-top: 1rem;
+    }
+    @media screen and (max-width: 909px) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+        .profile {
+            width: 100px;
+            top: -3rem;
+        }
+        h6 {
+            margin-top: 2rem;
+        }
+    }
+}
+
+.oqpai-career {
+    background-color: #F7F7F7;
+}
+
+.oqpai-career__intro {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/career/background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .intro-content {
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        .hashtag {
+            color: $primaryColor;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .header {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            color: #131313;
+            text-align: center;
+            strong {
+                span {
+                    color: $primaryColor;
+                }
+            }
+        }
+        .view-opening {
+            outline: none;
+            border: none;
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            font-size: 1.12rem;
+            letter-spacing: 1.6px;
+            cursor: pointer;
+            color: #fff;
+            background: #0B6EFD;
+            box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+        }
+    }
+}
+
+.oqpai-career__luggage {
+    width: 80%;
+    margin: auto;
+    padding: 5rem 0;
+    .header {
+        color: $primaryColor;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .luggage-content {
+        display: flex;
+        margin-top: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+        img {
+            width: 27%;
+        }
+    }
+}
+
+.oqpai-career__believe {
+    width: 80%;
+    margin: auto;
+    padding: 5rem 0;
+    .header {
+        color: $primaryColor;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .believe-content {
+        display: flex;
+        margin-top: 4rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        .card {
+            position: relative;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.4rem 0;
+            border-radius: 1rem;
+            background-color: #fff;
+            img {
+                position: absolute;
+                width: 5.4rem;
+                left: -2rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            p {
+                font-size: 1.1em;
+                color: #404040;
+                font-weight: 500;
+                span {
+                    color: $primaryColor;
+                }
+            }
+        }
+    }
+}
+
+.oqpai-why__us {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 3rem 0;
+    .subheader {
+        color: #404040;
+    }
+    .header {
+        text-transform: uppercase;
+        margin-top: .6rem;
+        span {
+            color: $primaryColor;
+        }
+    }
+    .why-us__content {
+        margin-top: 6rem;
+        display: flex;
+        gap: 2rem;
+        .card {
+            position: relative;
+            background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+            border-radius: 2rem;
+            padding: 4rem 2rem 2em 2rem;
+            img {
+                position: absolute;
+                width: 8rem;
+                top: -4.4rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            p {
+                margin-top: 1rem;
+                font-size: .9rem;
+                color: #404040;
+            }
+        }
+    }
+}
+
+.oqpai-career__showcase {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+    img {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+.oqpai-reviews {
+    @include sectionDesign(auto);
+    .oqpai-cards {
+        // overflow-x: 
+        height: 22rem;
+        display: grid;
+        align-items: end;
+        width: 100%;
+        overflow: hidden;
+        .reviewCard {
+            @include reviewCard();
+        }
+    }
+}
+
+.oqpai-community {
+    width: 100%;
+    padding: 3.5rem;
+    margin: 3rem 0;
+    text-align: center;
+    background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+    h2 {
+        width: 40%;
+        margin: auto;
+        color: $primaryColor;
+        margin-bottom: 1rem;
+        span {
+            color: #000;
+        }
+    }
+    .view-opening {
+        outline: none;
+        border: none;
+        border-radius: 16px;
+        padding: 1rem 2rem;
+        font-size: 1.12rem;
+        letter-spacing: 1.6px;
+        cursor: pointer;
+        margin-top: 1rem;
+        color: #fff;
+        background: #0B6EFD;
+        box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+    }
+}
+
+@media screen and (max-width: 909px) {
+    .oqpai-career__intro {
+        height: 60vh;
+        .intro-content {
+            width: 80%;
+            .hashtag {
+                font-size: 1.2rem;
+            }
+            .header {
+                font-size: 1.8rem;
+            }
+            .view-opening {
+                padding: 0.676rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    .oqpai-career__luggage {
+        display: none;
+    }
+    .oqpai-career__believe {
+        width: 90%;
+        .header {
+            font-size: 1.4rem;
+        }
+        .believe-content {
+            gap: 1.5rem;
+            .card {
+                width: 100%;
+                p {
+                    font-size: .9rem;
+                    margin-left: 2rem;
+                }
+                img {
+                    left: 0;
+                    width: 4rem;
+                }
+            }
+        }
+    }
+}

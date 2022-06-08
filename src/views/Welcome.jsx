@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -37,7 +37,7 @@ const responsiveCard = {
     navText: ["Mext", "Prev"],
     responsive: {
         0: {
-            items: 1,
+            items: 2.2,
         },
         400: {
             items: 2.2,
@@ -82,7 +82,70 @@ const responsiveReviewCard = {
 
 
 
+
+
 const Welcome = () => {
+
+    const text = useRef();
+    const index = useState();
+
+    
+
+    useEffect(() => {
+        // let txt = text.current.children;
+        let index = 0;
+        let ind = 0;
+        const animateText = () => {
+            const txts = document.querySelector(".animate-text").children,
+                txtLen = txts.length;
+
+            for (let i = 0; i < txtLen; i++) {
+                txts[i].classList.remove("text-in", "text-out");
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(() => {
+                txts[index].classList.add("text-out");
+            }, 2800);
+
+            setTimeout(() => {
+                if (index == txtLen - 1) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+                animateText();
+            }, 3000)
+
+        }
+        const animateProductText = () => {
+            const txts = document.querySelector(".animated-text").children,
+                txtLen = txts.length;
+
+            for (let i = 0; i < txtLen; i++) {
+                txts[i].classList.remove("text-in", "text-out");
+            }
+            txts[ind].classList.add("text-in");
+
+            setTimeout(() => {
+                txts[ind].classList.add("text-out");
+            }, 2800);
+
+            setTimeout(() => {
+                if (ind == txtLen - 1) {
+                    ind = 0;
+                } else {
+                    ind++;
+                }
+                animateProductText();
+            }, 3000)
+
+        }
+
+        animateText();
+        animateProductText();
+    });
+  
     return (
         <div className='oqpai-homepage'>
             {/* Welcome Section */}
@@ -90,7 +153,11 @@ const Welcome = () => {
                 <div className="oqpai-welcome__content">
                     <div className="col-left">
                         <h3>Book</h3>
-                        <h1>Luggage Storage</h1>
+                        <h1 ref={text} className='animate-text'>
+                            <span>Luggage Storage</span>
+                            <span>समान जमा करें</span>
+                            <span>સામાન સંગ્રહ</span>
+                        </h1>
                         <p>#Anytime #Anywhere</p>
 
                         <div className='download__apps'>
@@ -105,12 +172,14 @@ const Welcome = () => {
             {/* Intro Section */}
             <section className='oqpai-intro__section'>
                 <div className='oqpai-intro__header header'>
-                    <h1>Now Travel Luggage Free</h1>
+                    <h1>
+                        Now Travel Luggage Free
+                    </h1>
                     <p>Use OQPAI In just "4 Easy Steps"</p>
                 </div>
 
                 <div className="oqpai-intro__mobile">
-                <div className="odd">
+                    <div className="odd">
                         <img src={mobile1} alt="" />
                         <div className="content">
                             <h2>4.Drop Off</h2>
@@ -180,7 +249,11 @@ const Welcome = () => {
             {/* Download App */}
             <section className="oqpai-download__app">
                 <div className="oqpai-into__header header">
-                    <h1>We'll Make It Easy</h1>
+                    <h1 className='animated-text'>
+                        <span>We'll Make It Easy</span>
+                        <span>અમે તેને સરળ બનાવીશું</span>
+                        <span>हम इसे आसान बना देंगे</span>
+                    </h1>
                     <p>Download Our App</p>
                 </div>
                 <img src={appDownload} alt="App Download" />

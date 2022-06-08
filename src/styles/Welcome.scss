@@ -118,6 +118,9 @@
         img {
             top: -2rem;
         }
+        h6 {
+            font-size: 0.9rem;
+        }
     }
 }
 
@@ -214,6 +217,18 @@
                 font-size: 4rem;
                 line-height: 5rem;
                 font-weight: bold;
+                overflow: hidden;
+                span {
+                    // display: inline-block;
+                    display: none;
+                }
+                span.text-in {
+                    display: block;
+                    animation: textIn .5s ease;
+                }
+                span.text-out {
+                    animation: textOut .5s ease;
+                }
             }
             p {
                 color: $primaryColor;
@@ -250,7 +265,9 @@
         text-align: center;
         h1 {
             color: $primaryColor;
-            font-size: 3rem;
+            font-size: 4rem;
+            font-weight: bold;
+            overflow: hidden;
         }
         p {
             font-size: 1.6rem;
@@ -322,6 +339,23 @@
 // Download Our App
 .oqpai-download__app {
     @include sectionDesign(35%);
+    h1 {
+        color: $primaryColor;
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: bold;
+        overflow: hidden;
+        span {
+            display: none;
+        }
+        span.text-in {
+            display: block;
+            animation: textIn .5s ease;
+        }
+        span.text-out {
+            animation: textOut .5s ease;
+        }
+    }
 }
 
 // Our Plans
@@ -330,8 +364,9 @@
     .oqpai-plans {
         overflow: hidden;
         height: 20rem;
-        display: grid;
         align-items: end;
+        display: -webkit-flex;
+        -webkit-align-items: end;
         width: 80%;
         .card {
             @include card();
@@ -346,8 +381,9 @@
         // overflow-x: 
         height: 27rem;
         margin-top: 5rem;
-        display: grid;
         align-items: end;
+        display: -webkit-flex;
+        -webkit-align-items: end;
         width: 80%;
         overflow: hidden;
         .card {
@@ -368,7 +404,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1.6rem;
-        width: 80%;
+        width: 90%;
         .pricing__card {
             background: $primaryGradient;
             height: 14.688rem;
@@ -418,7 +454,12 @@
         background: url('../assets/welcome/welcome-mobile.png');
         flex-direction: column;
         background-size: cover;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: end;
+        display: -webkit-flex;
+        -webkit-justify-content: end;
         height: 60vh;
         .oqpai-welcome__content {
             width: 90%;

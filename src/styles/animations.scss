@@ -9,3 +9,21 @@
         transform: translate(-50%, -0.9rem);
     }
 }
+
+@keyframes textIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes textOut {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
