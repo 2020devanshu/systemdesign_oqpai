@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import '../styles/Career.scss';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
@@ -14,6 +14,13 @@ import grid from '../assets/career/grid/grid.png'
 import why1 from '../assets/career/whyQQPAI/1.png';
 import review from '../assets/welcome/review.png';
 import star from '../assets/Icon.png';
+import Facebook from '../assets/footer/Facebook.png';
+import Instagram from '../assets/footer/Instagram.png';
+import Linkedin from '../assets/footer/Linkedin.png';
+import Youtube from '../assets/footer/Youtube.png';
+import job1 from '../assets/career/jobs/1.png';
+import job2 from '../assets/career/jobs/2.png';
+import job3 from '../assets/career/jobs/3.png';
 
 const responsiveReviewCard = {
   margin: 20,
@@ -24,25 +31,60 @@ const responsiveReviewCard = {
   navClass: "dot",
   navText: ["Mext", "Prev"],
   responsive: {
-      0: {
-          items: 1,
-      },
-      400: {
-          items: 1,
-      },
-      600: {
-          items: 1,
-      },
-      700: {
-          items: 1,
-      },
-      1000: {
-          items: 2.7,
-      }
+    0: {
+      items: 1,
+    },
+    400: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    700: {
+      items: 1,
+    },
+    1000: {
+      items: 2.7,
+    }
   }
 }
 
+
 const Career = () => {
+
+  const [screen, setScreen] = useState(0);
+  const responsiveCard = {
+    margin: screen,
+    responsiveClass: true,
+    loop: true,
+    autoplay: false,
+    responsive: {
+      0: {
+        items: 1.2,
+      },
+      400: {
+        items: 1.2,
+      },
+      600: {
+        items: 1.2,
+      },
+      700: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      }
+    }
+  }
+
+  useEffect(() => {
+    if(window.screen.width >= 909){
+      setScreen(50);
+    }else{
+      setScreen(20);
+    }
+  },[]);
+
   return (
     <div className='oqpai-career'>
       <div className="oqpai-career__intro">
@@ -112,29 +154,61 @@ const Career = () => {
       <div className="oqpai-career__showcase">
         <img src={grid} alt="" />
       </div>
+      <section className="oqpai-jobs">
+        <h1 className="header">We are looking for Talented People Like You</h1>
+        <p className="subheader">Openings of OQPAI</p>
+        <OwlCarousel {...responsiveCard} className='oqpai-cards owl-theme'>
+          <div className="card sfirst">
+            <img src={job1} alt="Job 1" />
+            <h4>Marketing</h4>
+            <button className='appy-button'>Apply Now</button>
+          </div>
+          <div className="card second">
+            <img src={job2} alt="Job 2" />
+            <h4>Graphic</h4>
+            <button className='appy-button'>Apply Now</button>
+          </div>
+          <div id='card' className="card third">
+            <img src={job3} alt="Job 3" />
+            <h4>Development</h4>
+            <button className='appy-button'>Apply Now</button>
+          </div>
+        </OwlCarousel>
+      </section>
       <section className="oqpai-reviews">
-                <div className="oqpai-reviews__header header">
-                    <h1>We Love Travelers, Travelers Love Us!</h1>
-                    <p>What our users say about OQPAI</p>
-                </div>
-                <OwlCarousel {...responsiveReviewCard} className='oqpai-cards owl-theme'>
-                    <div className='reviewCard'>
-                        <img className='profile' src={review} alt="Bag 1" />
-                        <h6>Riya Agarwal</h6>
-                        <div className="review-stars">
-                            <img className='star' src={star} alt="" />
-                            <img className='star' src={star} alt="" />
-                            <img className='star' src={star} alt="" />
-                            <img className='star' src={star} alt="" />
-                            <img className='star' src={star} alt="" />
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
-                    </div>
-                </OwlCarousel>
+        <div className="oqpai-reviews__header header">
+          <h1>We Love Travelers, Travelers Love Us!</h1>
+          <p>What our users say about OQPAI</p>
+        </div>
+        <OwlCarousel {...responsiveReviewCard} className='oqpai-cards owl-theme'>
+          <div className='reviewCard'>
+            <img className='profile' src={review} alt="Bag 1" />
+            <h6>Riya Agarwal</h6>
+            <div className="review-stars">
+              <img className='star' src={star} alt="" />
+              <img className='star' src={star} alt="" />
+              <img className='star' src={star} alt="" />
+              <img className='star' src={star} alt="" />
+              <img className='star' src={star} alt="" />
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
+          </div>
+        </OwlCarousel>
       </section>
       <section className="oqpai-community">
         <h2>Join Our Team To Work At the Most <span>chilled</span> Company ever</h2>
         <button className='view-opening'>View Openings</button>
+      </section>
+      <section className="oqpai-connect">
+        <h1 className='header'>
+          Connect with us on
+        </h1>
+        <div className="social-links">
+          <img src={Facebook} alt="Facebook" />
+          <img src={Instagram} alt="Facebook" />
+          <img src={Linkedin} alt="Facebook" />
+          <img src={Youtube} alt="Facebook" />
+        </div>
       </section>
     </div>
   )

@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 @mixin sectionDesign($imageWidth) {
     width: 100%;
     height: 90vh;
@@ -26,7 +26,8 @@
     }
     @media screen and (max-width: 909px) {
         height: auto;
-        .header {
+        display: none;
+        .oqpai-reviews__header {
             width: 90%;
             h1 {
                 font-size: 1.7rem;
@@ -42,7 +43,7 @@
     position: relative;
     width: auto;
     // height: 292px;
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.05);
     border-radius: 25.3423px;
     padding: 3rem 5rem;
@@ -58,7 +59,7 @@
     .review-stars {
         display: flex;
         align-items: center;
-        gap: .5rem;
+        gap: 0.5rem;
         justify-content: center;
         margin-top: 1rem;
         .star {
@@ -87,7 +88,7 @@
 }
 
 .oqpai-career {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
 }
 
 .oqpai-career__intro {
@@ -96,7 +97,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/career/background.png');
+    background-image: url("../assets/career/background.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -129,8 +130,8 @@
             letter-spacing: 1.6px;
             cursor: pointer;
             color: #fff;
-            background: #0B6EFD;
-            box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+            background: #0b6efd;
+            box-shadow: 0px 0px 24.3294px #83b6ff, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
         }
     }
 }
@@ -209,7 +210,7 @@
     }
     .header {
         text-transform: uppercase;
-        margin-top: .6rem;
+        margin-top: 0.6rem;
         span {
             color: $primaryColor;
         }
@@ -220,7 +221,7 @@
         gap: 2rem;
         .card {
             position: relative;
-            background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+            background: linear-gradient(133.58deg, #e2eeff 6.2%, #aecefd 106.74%);
             border-radius: 2rem;
             padding: 4rem 2rem 2em 2rem;
             img {
@@ -235,7 +236,7 @@
             }
             p {
                 margin-top: 1rem;
-                font-size: .9rem;
+                font-size: 0.9rem;
                 color: #404040;
             }
         }
@@ -254,10 +255,91 @@
     }
 }
 
+.oqpai-jobs {
+    width: 80%;
+    padding: 3rem 0;
+    margin: auto;
+    text-align: center;
+    .header {
+        font-size: 3rem;
+        color: $primaryColor;
+        width: 80%;
+        margin: auto;
+    }
+    .subheader {
+        font-size: 1.1rem;
+        color: #404040;
+        margin-top: 1.3rem;
+    }
+    .oqpai-cards {
+        width: auto;
+        margin-top: 3rem;
+        height: 16rem;
+        overflow: hidden;
+        .card {
+            margin-top: 4rem;
+            position: relative;
+            width: auto;
+            height: 12rem;
+            background: $primaryGradient;
+            cursor: pointer;
+            transition: all 1s ease-in-out;
+            border-radius: 2rem;
+            img {
+                position: absolute;
+                width: 10rem;
+                top: -4rem;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: all .3s ease-in-out;
+            }
+            h4 {
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #fff;
+                font-size: 1.5rem;
+                transition: all .3s ease-in-out;
+            }
+            button {
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+                outline: none;
+                border: none;
+                color: $primaryColor;
+                opacity: 0;
+                width: 70%;
+                padding: 0.75rem 0;
+                font-weight: bold;
+                border-radius: 10px;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+            }
+            &:hover {
+                img {
+                    opacity: 0;
+                }
+                h4 {
+                    top: 25%;
+                }
+                button {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
 .oqpai-reviews {
     @include sectionDesign(auto);
     .oqpai-cards {
-        // overflow-x: 
+        // overflow-x:
         height: 22rem;
         display: grid;
         align-items: end;
@@ -274,7 +356,7 @@
     padding: 3.5rem;
     margin: 3rem 0;
     text-align: center;
-    background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+    background: linear-gradient(133.58deg, #e2eeff 6.2%, #aecefd 106.74%);
     h2 {
         width: 40%;
         margin: auto;
@@ -294,8 +376,41 @@
         cursor: pointer;
         margin-top: 1rem;
         color: #fff;
-        background: #0B6EFD;
-        box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+        background: #0b6efd;
+        box-shadow: 0px 0px 24.3294px #83b6ff, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+    }
+}
+
+.oqpai-connect {
+    width: 80%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    .header {
+        font-size: 3rem;
+        color: $primaryColor;
+        text-transform: capitalize;
+        text-align: center;
+    }
+    .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        gap: 3rem;
+        img {
+            filter: grayscale(1) invert(1);
+            width: 3rem;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
     }
 }
 
@@ -321,15 +436,17 @@
     }
     .oqpai-career__believe {
         width: 90%;
+        padding: 3rem 0;
         .header {
             font-size: 1.4rem;
         }
         .believe-content {
             gap: 1.5rem;
+            margin-top: 2.5rem;
             .card {
                 width: 100%;
                 p {
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     margin-left: 2rem;
                 }
                 img {
@@ -338,5 +455,88 @@
                 }
             }
         }
+    }
+    .oqpai-why__us {
+        width: 90%;
+        padding: 2rem 0;
+        .header {
+            font-size: 1.8rem;
+        }
+        .why-us__content {
+            margin-top: 4rem;
+            flex-direction: column;
+            gap: 4rem;
+            .card {
+                width: 100%;
+                padding: 3rem 1.7rem 1.7rem 1.7rem;
+                img {
+                    width: 6rem;
+                    top: -3rem;
+                }
+            }
+        }
+    }
+    .oqpai-career__showcase {
+        padding: 3rem 0;
+        img {
+            width: 90%;
+        }
+    }
+    .oqpai-jobs {
+        width: 90%;
+        .header {
+            font-size: 1.7rem;
+            width: 100%;
+        }
+        .subheader {
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+        }
+        .oqpai-cards {
+            margin-top: 1rem;
+            .card {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                img {
+                    width: 6rem;
+                    top: -2rem;
+                }
+                h4 {
+                    top: auto;
+                    left: auto;
+                    transform: translateX(0);
+                    position: relative;
+                    font-size: 1.2rem;
+                    margin-top: 2.9rem;
+                }
+                button {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    transform: translateX(0);
+                    opacity: 1;
+                    margin-top: 1rem;
+                    font-size: 0.9rem;
+                    padding: 0.55rem 0;
+                }
+                &:hover {
+                    h4 {
+                        top: auto;
+                    }
+                    img {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .oqpai-community {
+        display: none;
+    }
+    .oqpai-connect {
+        display: none;
     }
 }
