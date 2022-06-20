@@ -1,0 +1,147 @@
+@import './variables.scss';
+@import './animations.scss';
+.oqpai-contact {
+    background-color: #f7f7f7;
+}
+
+.oqpai-contact__intro {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../assets/contact/backgroundGradient.png');
+    background-position: 100% 100%;
+    background-size: cover;
+    .contact-intro {
+        width: 80%;
+        height: 90vh;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .content-left {
+            // width: 70%
+            .content-head {
+                h1 {
+                    font-size: 3rem;
+                    color: $primaryColor;
+                }
+                p {
+                    font-size: 1.4rem;
+                    margin-top: .4rem;
+                    color: #404040;
+                }
+            }
+            .content-foot {
+                margin-top: 2.5rem;
+                .divider {
+                    width: 40%;
+                    height: 5px;
+                    background: linear-gradient(112.6deg, #9BC1F9 2.12%, #125DFE 116.86%);
+                    border-radius: 25.3423px;
+                }
+                .helpline-heading {
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                    img {
+                        width: 2rem;
+                    }
+                    p {
+                        font-size: 1.5rem;
+                        margin-left: .7rem;
+                        color: #404040;
+                    }
+                }
+                h2 {
+                    font-size: 1.5rem;
+                    color: #404040;
+                }
+            }
+        }
+        .content-right {
+            width: 50%;
+            align-self: flex-end;
+            // justify-self: end;
+            img {
+                float: right;
+                width: 55%;
+            }
+        }
+    }
+}
+
+.oqpai-contact-form {
+    width: 100%;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contact-form {
+        width: 100%;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 5rem 3rem;
+        text-align: center;
+        border-radius: 2rem;
+        .heading {
+            color: $primaryColor;
+            font-size: 2.5rem;
+            text-transform: capitalize;
+        }
+        form {
+            margin-top: 2em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            input,
+            textarea {
+                width: 100%;
+                margin: .7rem 0;
+                padding: 1rem 2rem;
+                outline: none;
+                border: none;
+                background-color: #F4F8FF;
+                border-radius: 15px;
+                font-size: 1rem;
+                font-weight: 500;
+                color: #6b6b6b;
+                letter-spacing: 1px;
+                &::placeholder {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: #6b6b6b;
+                    letter-spacing: 1px;
+                }
+            }
+            textarea {
+                height: 10em;
+                resize: vertical;
+            }
+            button {
+                margin-top: 2rem;
+                color: #fff;
+                padding: 0.8rem 3rem;
+                font-size: 1.1rem;
+                outline: none;
+                border: none;
+                background: #0B6EFD;
+                box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+                border-radius: 16.2196px;
+                transition: all .5s ease-in-out;
+                cursor: pointer;
+                .loader {
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    border-radius: 50%;
+                    border-top: 2px solid #fff;
+                    border-left: 2px solid #fff;
+                    border-bottom: solid 2px solid rgba(255, 255, 255, 0.5);
+                    border-right: solid 2px solid rgba(255, 255, 255, 0.5);
+                    animation: loaderSpin 1.4s linear infinite
+                }
+            }
+        }
+    }
+}

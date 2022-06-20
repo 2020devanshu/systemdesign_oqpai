@@ -27,3 +27,12 @@
         transform: translateY(-100%);
     }
 }
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

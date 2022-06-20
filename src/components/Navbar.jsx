@@ -41,7 +41,7 @@ const Navbar = () => {
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/carrer">Career</Link></li>
-                            <li><Link to="/">Contact Us</Link></li>
+                            <li><Link to="/contact-us">Contact Us</Link></li>
                         </ul>
                         <button className="oqpai-partner">
                             Become a Partner
