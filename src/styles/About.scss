@@ -1,0 +1,164 @@
+@import './variables.scss';
+.oqpai-about {
+    background-color: #f7f7f7;
+}
+
+.oqpai-about__intro {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/career/background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .intro-content {
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        .hashtag {
+            color: $primaryColor;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .header {
+            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            color: #131313;
+            text-align: center;
+            strong {
+                span {
+                    color: $primaryColor;
+                }
+            }
+        }
+        .download__oqpai {
+            outline: none;
+            border: none;
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            font-size: 1.12rem;
+            letter-spacing: 1.6px;
+            cursor: pointer;
+            color: #fff;
+            background: #0b6efd;
+            box-shadow: 0px 0px 24.3294px #83b6ff, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+        }
+    }
+}
+
+.oqpai-about__us {
+    width: 100%;
+    padding: 4rem 0;
+    .oqpai-about__content {
+        width: 80%;
+        margin: auto;
+        .header {
+            text-align: center;
+            color: $primaryColor;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+        }
+        .content {
+            text-align: start;
+            p {
+                margin: 1.4rem;
+            }
+        }
+    }
+}
+
+.oqpai-meet__team {
+    width: 100%;
+    padding-bottom: 4rem;
+    .team-content {
+        width: 80%;
+        margin: auto;
+        .header {
+            text-align: center;
+            color: $primaryColor;
+            font-size: 2.5rem;
+            margin: 2rem 0;
+        }
+        .team-gallery {
+            margin-top: 2rem;
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-gap: 2rem;
+            .card {
+                text-align: center;
+                .team-image {
+                    width: 15rem;
+                }
+                h3 {
+                    color: $primaryColor;
+                    margin: .5rem 0;
+                }
+                p {
+                    color: #6B6B6B;
+                }
+                a {
+                    img {
+                        width: 2rem;
+                        margin-top: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 909px) {
+    .oqpai-about__intro {
+        height: 60vh;
+        .intro-content {
+            width: 80%;
+            .hashtag {
+                font-size: 1.2rem;
+            }
+            .header {
+                margin: 1rem 0;
+                font-size: 1.8rem;
+            }
+            .download__oqpai {
+                padding: 0.676rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    }
+    .oqpai-about__us {
+        padding: 2rem 0;
+        .oqpai-about__content {
+            width: 90%;
+            .header {
+                font-size: 2rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+    .oqpai-meet__team {
+        .team-content {
+            width: 90%;
+            .header {
+                font-size: 2rem;
+            }
+            .team-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                grid-gap: 1rem;
+                .card {
+                    .team-image {
+                        width: 9rem;
+                    }
+                    h3 {
+                        font-size: 1.1rem;
+                    }
+                    p {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}

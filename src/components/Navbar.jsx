@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.scss';
 import menu from '../assets/navbar/menu.png';
 import home from '../assets/navbar/home.png';
@@ -37,10 +38,10 @@ const Navbar = () => {
                     <a className='oqpai-logo' href="/">O<span>Q</span>PAI</a>
                     <div className='oqpai-links'>
                         <ul className='oqpai-nav-links'>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/">About</a></li>
-                            <li><a href="/#/carrer">Career</a></li>
-                            <li><a href="/">Contact Us</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/carrer">Career</Link></li>
+                            <li><Link to="/">Contact Us</Link></li>
                         </ul>
                         <button className="oqpai-partner">
                             Become a Partner
