@@ -25,6 +25,13 @@ const Navbar = () => {
         }
     }
 
+    const closeSideBar = () => {
+        let sideMenu = document.querySelector(".mobile-menu");
+        let menuOverlay = document.querySelector(".mobile-overlay");
+        sideMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
+    }
+
     useEffect(() => {
        
         // if(location.pathname == '/carrer'){
@@ -58,26 +65,26 @@ const Navbar = () => {
 
             </div>
             <div className="mobile-menu">
-                <ul className="mobile-links">
+                <ul onClick={closeSideBar} className="mobile-links">
                     <li>
                         <img src={home} alt="" />
-                        <a href='/'>Home</a>
+                        <Link to='/'>Home</Link>
                     </li>
                     <li>
                         <img src={about} alt="" />
-                        <a href='/'>About</a>
+                        <Link to='/about'>About</Link>
                     </li>
                     <li>
                         <img src={career} alt="" />
-                        <a href='/#/carrer'>Career</a>
+                        <Link to='/carrer'>Career</Link>
                     </li>
                     <li>
                         <img src={contact} alt="" />
-                        <a>Contact Us</a>
+                        <Link to="/contact-us">Contact Us</Link>
                     </li>
                     <li>
                         <img src={partner} alt="" />
-                        <a>Become a Partner</a>
+                        <Link to='/partner'>Become a Partner</Link>
                     </li>
                 </ul>
             </div>
