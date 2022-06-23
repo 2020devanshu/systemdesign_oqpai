@@ -7,6 +7,7 @@ import About from './views/About'
 import Career from './views/Career'
 import Welcome from './views/Welcome'
 import Contact from './views/Contact';
+import Partner from './views/Partner'
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/about' element={<About/>} />
           <Route path='/carrer' element={<Career/>} />
           <Route path='/contact-us' element={<Contact/>} />
+          <Route path='/partner' element={<Partner/>} />
         </Routes>
         <Footer />
       </div>

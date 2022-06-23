@@ -28,15 +28,11 @@ const Navbar = () => {
     const closeSideBar = () => {
         let sideMenu = document.querySelector(".mobile-menu");
         let menuOverlay = document.querySelector(".mobile-overlay");
+        let menu = document.querySelector(".menu");
         sideMenu.classList.remove("active");
         menuOverlay.classList.remove("active");
+        menu.classList.remove('active');
     }
-
-    useEffect(() => {
-       
-        // if(location.pathname == '/carrer'){
-        // }
-    }, []);
 
     return (
         <>
@@ -50,9 +46,9 @@ const Navbar = () => {
                             <li><Link to="/carrer">Career</Link></li>
                             <li><Link to="/contact-us">Contact Us</Link></li>
                         </ul>
-                        <button className="oqpai-partner">
+                        <Link to='/partner' className="oqpai-partner">
                             Become a Partner
-                        </button>
+                        </Link>
 
                     </div>
                     <div onClick={toggleSideBar} className="hamburger">

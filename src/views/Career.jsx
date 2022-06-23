@@ -26,6 +26,7 @@ const responsiveReviewCard = {
   margin: 20,
   responsiveClass: true,
   loop: true,
+  center: true,
   autoplay: false,
   nav: true,
   navClass: "dot",
