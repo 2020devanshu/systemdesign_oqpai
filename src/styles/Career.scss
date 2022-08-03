@@ -107,12 +107,12 @@
         margin: auto;
         .hashtag {
             color: $primaryColor;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
         .header {
             font-size: 2.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.9rem;
             color: #131313;
             text-align: center;
             strong {
@@ -137,21 +137,81 @@
 }
 
 .oqpai-career__luggage {
-    width: 80%;
+    width: 100%;
     margin: auto;
     padding: 5rem 0;
     .header {
+        margin-inline: auto;
+        width: 80%;
         color: $primaryColor;
         font-size: 2.5rem;
         text-align: center;
     }
     .luggage-content {
-        display: flex;
-        margin-top: 1.5rem;
-        align-items: center;
-        justify-content: space-between;
-        img {
-            width: 27%;
+        width: 100%;
+        height: auto;
+        margin-top: 6rem;
+        background-image: url(../assets/career/luggage/background.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        .card-container {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+            .card {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 2.5rem;
+                height: 23rem;
+                background-color: white;
+                width: 27%;
+                border-radius: 22.2773px;
+                h2 {
+                    width: 70%;
+                    opacity: 0;
+                    transition: opacity .3s ease-in-out;
+                    span {
+                        color: #0b6efd;
+                    }
+                }
+                h3 {
+                    position: absolute;
+                    bottom: 2rem;
+                    transition: opacity .3s ease-in-out;
+                }
+                img {
+                    top: -2.5rem;
+                    width: 50%;
+                    position: absolute;
+                    transition: opacity .3s ease-in-out;
+                }
+                .second {
+                    top: -3.3rem;
+                }
+                .third {
+                    width: 80%;
+                }
+            }
+            .card:hover {
+                img {
+                    opacity: 0;
+                }
+                h3 {
+                    opacity: 0;
+                }
+                h2 {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
@@ -162,36 +222,34 @@
     padding: 5rem 0;
     .header {
         color: $primaryColor;
-        font-size: 2.5rem;
+        font-size: 3rem;
         text-align: center;
     }
     .believe-content {
         display: flex;
-        margin-top: 4rem;
+        margin-top: 6rem;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 5rem;
         flex-wrap: wrap;
         .card {
             position: relative;
             width: 40%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.4rem 0;
+            padding: 2rem 1rem;
             border-radius: 1rem;
             background-color: #fff;
             img {
                 position: absolute;
-                width: 5.4rem;
-                left: -2rem;
+                width: 9rem;
+                left: -4rem;
                 top: 50%;
                 transform: translateY(-50%);
             }
             p {
-                font-size: 1.1em;
+                font-size: 1.4rem;
                 color: #404040;
-                font-weight: 500;
+                font-weight: bold;
+                margin-left: 7rem;
                 span {
                     color: $primaryColor;
                 }
@@ -205,12 +263,15 @@
     margin: auto;
     text-align: center;
     padding: 3rem 0;
+    margin-bottom: 3rem;
     .subheader {
         color: #404040;
+        font-size: 1.2rem;
     }
     .header {
         text-transform: uppercase;
-        margin-top: 0.6rem;
+        margin-top: 1.2rem;
+        font-size: 3rem;
         span {
             color: $primaryColor;
         }
@@ -349,6 +410,48 @@
             @include reviewCard();
         }
     }
+    .owl-item.center {
+        transform: scale(1) !important;
+    }
+    .owl-item {
+        transform: scale(0.9) !important;
+    }
+    .owl-item.cloned {
+        transform: scale(0.9) !important;
+    }
+    .owl-item.center.cloned {
+        transform: scale(1) !important;
+    }
+    .oqpai-cards {
+        // overflow-x: 
+        height: 22rem;
+        display: flex;
+        align-items: end;
+        width: 100%;
+        overflow: hidden;
+        .reviewCard {
+            @include reviewCard();
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        .owl-dot {
+            span {
+                width: 20px !important;
+                background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+                border-radius: 16.1909px;
+            }
+        }
+        .active {
+            span {
+                width: 50px !important;
+                background: $primaryGradient !important;
+                border-radius: 16.1909px;
+            }
+        }
+    }
 }
 
 .oqpai-community {
@@ -446,18 +549,18 @@
             .card {
                 width: 100%;
                 p {
-                    font-size: 0.9rem;
-                    margin-left: 2rem;
+                    font-size: 1.1rem;
+                    margin-left: 4.6rem;
                 }
                 img {
                     left: 0;
-                    width: 4rem;
+                    width: 4.6rem;
                 }
             }
         }
     }
     .oqpai-why__us {
-        width: 90%;
+        width: 80%;
         padding: 2rem 0;
         .header {
             font-size: 1.8rem;
@@ -465,10 +568,10 @@
         .why-us__content {
             margin-top: 4rem;
             flex-direction: column;
-            gap: 4rem;
+            gap: 6rem;
             .card {
                 width: 100%;
-                padding: 3rem 1.7rem 1.7rem 1.7rem;
+                padding: 4rem 1.7rem 1.7rem 1.7rem;
                 img {
                     width: 6rem;
                     top: -3rem;

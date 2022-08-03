@@ -11,13 +11,14 @@ import delivery3 from '../assets/partner/delivery/3.png';
 import storage1 from '../assets/partner/storage/1.png';
 import storage2 from '../assets/partner/storage/2.png';
 import storage3 from '../assets/partner/storage/3.png';
+import { database } from '../firebase/firebase';
 
 const Partner = () => {
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
-    const [selected, setSelect] = useState([]);
+    const [selected, setSelect] = useState("");
     const [cl, setCl] = useState("");
 
     const responsiveCard = {
@@ -74,14 +75,41 @@ const Partner = () => {
         }
     }
 
-    const submitForm = () => {
-
+    const submitForm = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        await database.collection("partnerForm").add({
+            name,
+            email,
+            number,
+            selected,
+        }).then((response) => {
+            setLoading(false);
+            setEmail("");
+            setNumber("");
+            setName("");
+            setSelect("");
+            alert("Thank You");
+        }).catch((err) => {
+            setLoading(false);
+            setEmail("");
+            setNumber("");
+            setName("");
+            setSelect("");
+            alert("Something Went Wrong");
+        })
     }
 
-    const selectItem = (item) => {
-        console.log(item);
-        if (!selected.includes(item)) setSelect(selected.push(item))
-        if (selected.includes(item)) setSelect(selected.slice(selected.indexOf(item), 1))
+    function selectItem(item) {
+        setSelect("");
+        if (item === "delivery") {
+            setSelect("delivery")
+        } else if (item === "partner") {
+            setSelect("partner");
+        } else {
+            setSelect("");
+        }
+
         console.log(selected);
     }
     return (
@@ -167,7 +195,7 @@ const Partner = () => {
                     <form onSubmit={submitForm}>
                         <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='Enter Full Name*' required />
                         <input value={number} onChange={(e) => setNumber(e.target.value)} type="phone" placeholder='Enter Contact Number*' required />
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Type your Query*' required />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter your E-mail*' required />
                         <div className='apply'>
                             <p className='head'>I am Applying For</p>
                             <div className="select-cards">

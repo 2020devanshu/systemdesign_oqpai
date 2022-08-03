@@ -8,6 +8,7 @@ import about from '../assets/navbar/about.png';
 import career from '../assets/navbar/career.png';
 import contact from '../assets/navbar/contact.png';
 import partner from '../assets/navbar/partner.png';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const location = useLocation();
@@ -38,7 +39,7 @@ const Navbar = () => {
         <>
             <header>
                 <nav>
-                    <a className='oqpai-logo' href="/">O<span>Q</span>PAI</a>
+                    <a className='oqpai-logo' href="/"><img src={logo} alt="" /></a>
                     <div className='oqpai-links'>
                         <ul className='oqpai-nav-links'>
                             <li><Link to="/">Home</Link></li>

@@ -8,6 +8,7 @@ import Career from './views/Career'
 import Welcome from './views/Welcome'
 import Contact from './views/Contact';
 import Partner from './views/Partner'
+import ScrollToTop from './components/ScrollToTop'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
     <Router>
       <div>
         <Navbar />
+        <ScrollToTop/>
         <Routes>
           <Route exact path='/' element={<Welcome/>} />
           <Route path='/about' element={<About/>} />

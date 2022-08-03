@@ -7,7 +7,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     .oqpai-footer__colLeft {
-        width: 40%;
+        width: 45%;
         display: flex;
         // font-family: sans-serif;
         .footer-thank__you {
@@ -21,14 +21,13 @@ footer {
             justify-content: space-around;
             .footer-logo__container {
                 .footer-logo {
-                    font-size: 3rem;
-                    font-weight: 700;
-                    color: $secondaryColor;
-                    span {
-                        color: $primaryColor;
+                    img {
+                        width: 12rem;
                     }
                 }
                 p {
+                    font-size: 1.1rem;
+                    margin-top: 1rem;
                     color: #fff;
                 }
             }
@@ -59,8 +58,9 @@ footer {
         justify-content: space-around;
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             li {
+                font-size: 1.2rem;
                 color: #fff;
             }
         }
@@ -69,9 +69,9 @@ footer {
             outline: none;
             border: none;
             color: #0B6EFD;
-            padding: 0.55rem 1.134rem;
+            padding: 0.75rem 1.434rem;
             border-radius: 10px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.1s ease-in-out;
             &:active {
@@ -80,14 +80,15 @@ footer {
         }
         .footer-connect {
             p {
+                font-size: 1.1rem;
                 color: #fff;
             }
             .footer-social-links {
                 display: flex;
-                margin-top: 1rem;
-                gap: 2rem;
+                margin-top: 1.3rem;
+                gap: 3rem;
                 img {
-                    width: 2rem;
+                    width: 2.2rem;
                 }
             }
         }
@@ -120,15 +121,12 @@ footer {
             }
         }
         .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            a {
-                color: black;
-            }
-            span {
-                color: $primaryColor;
+            img {
+                width: 36%;
             }
         }
         p {

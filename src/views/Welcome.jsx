@@ -25,16 +25,47 @@ import secure6 from '../assets/welcome/secure/6.png';
 import secure7 from '../assets/welcome/secure/7.png';
 import review from '../assets/welcome/review.png';
 import star from '../assets/Icon.png';
+import aws from '../assets/welcome/aws.png'
 import '../styles/Welcome.scss';
+import Model from '../components/Model';
 
 const responsiveCard = {
     margin: 10,
     responsiveClass: true,
     loop: true,
-    autoplay: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
     nav: true,
     navClass: "dot",
-    navText: ["Mext", "Prev"],
+    // navText: ["Mext", "Prev"],
+    responsive: {
+        0: {
+            items: 2.2,
+        },
+        400: {
+            items: 2.2,
+        },
+        600: {
+            items: 2,
+        },
+        700: {
+            items: 3,
+        },
+        1000: {
+            items: 4,
+        }
+    }
+}
+const secureCard = {
+    margin: 10,
+    responsiveClass: true,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    nav: true,
+    navClass: "dot",
+    // center: true,
+    // navText: ["Mext", "Prev"],
     responsive: {
         0: {
             items: 2.2,
@@ -57,10 +88,11 @@ const responsiveReviewCard = {
     margin: 20,
     responsiveClass: true,
     loop: true,
-    autoplay: false,
+    center: true,
+    autoplay: true,
     nav: true,
-    navClass: "dot",
-    navText: ["Mext", "Prev"],
+    // navClass: "dot",
+    // navText: ["Mext", "Prev"],
     responsive: {
         0: {
             items: 1,
@@ -87,9 +119,15 @@ const responsiveReviewCard = {
 const Welcome = () => {
 
     const text = useRef();
-    const index = useState();
-
+    const [model, setModel] = useState(false);
     
+    const openModel = () => {
+        setModel(true);
+    }
+
+    const closeModel = () => {
+        setModel(false);
+    }
 
     useEffect(() => {
         // let txt = text.current.children;
@@ -145,9 +183,10 @@ const Welcome = () => {
         animateText();
         animateProductText();
     });
-  
+
     return (
         <div className='oqpai-homepage'>
+            <Model closeModel={closeModel} open={model} />
             {/* Welcome Section */}
             <section className='oqpai-home__section'>
                 <div className="oqpai-welcome__content">
@@ -161,9 +200,9 @@ const Welcome = () => {
                         <p>#Anytime #Anywhere</p>
 
                         <div className='download__apps'>
-                            <a href="/">
-                                <img src={appstore} alt="Apple Store" />
-                                <img src={googleplay} alt="Google PlayStore" />
+                            <a>
+                                <img onClick={openModel} src={appstore} alt="Apple Store" />
+                                <img onClick={openModel} src={googleplay} alt="Google PlayStore" />
                             </a>
                         </div>
                     </div>
@@ -216,31 +255,31 @@ const Welcome = () => {
                             <h6>1.Book</h6>
                             <div className="hover-card">
                                 <h4>1.Book</h4>
-                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                                <p>Book Luggage Storage from OQPAI application in just few clicks!</p>
                             </div>
                         </div>
                         <div className="intro-card">
                             <img src={intro2} alt="" />
-                            <h6>1.Book</h6>
+                            <h6>2.Pick Up</h6>
                             <div className="hover-card">
-                                <h4>1.Book</h4>
-                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                                <h4>2.Pick Up</h4>
+                                <p>Our Delivery agent will come to pickup your Luggage in 12 minutes</p>
                             </div>
                         </div>
                         <div className="intro-card">
                             <img src={intro3} alt="" />
-                            <h6>1.Book</h6>
+                            <h6>3.Enjoy</h6>
                             <div className="hover-card">
-                                <h4>1.Book</h4>
-                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                                <h4>3.Enjoy</h4>
+                                <p>Enjoy your journey hassel free without worring about Luggage</p>
                             </div>
                         </div>
                         <div className="intro-card">
                             <img src={intro4} alt="" />
-                            <h6>1.Book</h6>
+                            <h6>4.Drop Off</h6>
                             <div className="hover-card">
-                                <h4>1.Book</h4>
-                                <p>Book Luggage Storage from OQPAI application in just few clicks!Book Luggage Storage from OQPAI application in just few clicks!</p>
+                                <h4>4.Drop Off</h4>
+                                <p>Our delivery agent will come at your location when you request for drop off.</p>
                             </div>
                         </div>
                     </div>
@@ -289,22 +328,23 @@ const Welcome = () => {
                     <h1>Secure And Safe</h1>
                     <p>Your Luggage Is Our Responsibilty</p>
                 </div>
-                <OwlCarousel {...responsiveCard} className='oqpai-cards owl-theme'>
+                {/* <div className="fade"></div> */}
+                <OwlCarousel {...secureCard} className='oqpai-cards owl-theme'>
                     <div className='card'>
                         <img src={secure1} alt="Bag 1" />
                         <h6>Certified Luggage Storage</h6>
                     </div>
                     <div className='card'>
                         <img src={secure2} alt="Bag 2" />
-                        <h6>Certified Luggage Storage</h6>
+                        <h6>Verified Delivery Partners</h6>
                     </div>
                     <div className='card'>
                         <img src={secure3} alt="Bag 3" />
-                        <h6>Certified Luggage Storage</h6>
+                        <h6>Fixed Rate</h6>
                     </div>
                     <div className='card'>
                         <img src={secure4} alt="Bag 4" />
-                        <h6>Certified Luggage Storage</h6>
+                        <h6>Secure Payment</h6>
                     </div>
                     <div className='card'>
                         <img src={secure5} alt="Bag 4" />
@@ -364,7 +404,57 @@ const Welcome = () => {
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
                     </div>
+                    <div className='reviewCard'>
+                        <img className='profile' src={review} alt="Bag 1" />
+                        <h6>Riya Agarwal</h6>
+                        <div className="review-stars">
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
+                    </div>
+                    <div className='reviewCard'>
+                        <img className='profile' src={review} alt="Bag 1" />
+                        <h6>Riya Agarwal</h6>
+                        <div className="review-stars">
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                            <img className='star' src={star} alt="" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nisi molestias, veritatis asperiores ipsa quo.</p>
+                    </div>
                 </OwlCarousel>
+            </section>
+
+            <section className="oqpai-our-partners">
+                <div className="oqpai-partner__header header">
+                    <h1>Our Partners</h1>
+                </div>
+                <div className="oqpai-partner__content">
+                    <div className="companies">
+                        <div className="company">
+                            <img src={aws} alt="AwS" />
+                        </div>
+                        <div className="company">
+                            <img src={aws} alt="AwS" />
+                        </div>
+                        <div className="company">
+                            <img src={aws} alt="AwS" />
+                        </div>
+                        <div className="company">
+                            <img src={aws} alt="AwS" />
+                        </div>
+                        <div className="company">
+                            <img src={aws} alt="AwS" />
+                        </div>
+
+                    </div>
+                </div>
             </section>
         </div>
     )

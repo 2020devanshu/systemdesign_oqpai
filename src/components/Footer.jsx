@@ -6,6 +6,7 @@ import Facebook from '../assets/footer/Facebook.png';
 import Instagram from '../assets/footer/Instagram.png';
 import Linkedin from '../assets/footer/Linkedin.png';
 import Youtube from '../assets/footer/Youtube.png';
+import logo from '../assets/logo.png'
 import '../styles/Footer.scss'
 
 const Footer = () => {
@@ -20,7 +21,7 @@ const Footer = () => {
                     <button>Become a Partner</button>
                 </ul>
                 <div className="logo">
-                    <a href="/">O<span>Q</span>PAI</a>
+                    <a href="/"><img src={logo} alt="" /></a>
                 </div>
                 <p>Id massa sapien mattis id a massa amet. Sed interdum non habitant ultrices mi urna ullamcorper faucibus a. Enim lectus.</p>
                 <div className="footer-appLinks__container">
@@ -41,7 +42,7 @@ const Footer = () => {
                 <img className='footer-thank__you' src={thankYou} alt="Thank You" />
                 <div className="oqpai-footer__colLeft_content">
                     <div className="footer-logo__container">
-                        <a className='footer-logo'>O<span>Q</span>PAI</a>
+                        <a className='footer-logo'><img src={logo} alt="" /></a>
                         <p>Id massa sapien mattis id a massa amet. Sed interdum non habitant ultrices mi urna ullamcorper faucibus a. Enim lectus.</p>
 
                     </div>

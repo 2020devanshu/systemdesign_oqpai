@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/Career.scss';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import pickup from '../assets/career/luggage/pickup.png';
-import store from '../assets/career/luggage/store.png';
-import drop from '../assets/career/luggage/drop.png';
+import pickup from '../assets/career/luggage/1.png';
+import store from '../assets/career/luggage/2.png';
+import drop from '../assets/career/luggage/3.png';
 import one from '../assets/career/believe/1.png';
 import two from '../assets/career/believe/2.png';
 import three from '../assets/career/believe/3.png';
@@ -30,7 +30,7 @@ const responsiveReviewCard = {
   autoplay: false,
   nav: true,
   navClass: "dot",
-  navText: ["Mext", "Prev"],
+
   responsive: {
     0: {
       items: 1,
@@ -79,12 +79,12 @@ const Career = () => {
   }
 
   useEffect(() => {
-    if(window.screen.width >= 909){
+    if (window.screen.width >= 909) {
       setScreen(50);
-    }else{
+    } else {
       setScreen(20);
     }
-  },[]);
+  }, []);
 
   return (
     <div className='oqpai-career'>
@@ -100,9 +100,23 @@ const Career = () => {
           We Make Travelers, Travel Without Worring About Their Luggage!
         </h1>
         <div className="luggage-content">
-          <img src={pickup} alt="Pick Up" />
-          <img src={store} alt="Store" />
-          <img src={drop} alt="Drop Off" />
+         <div className="card-container">
+          <div className="card">
+          <h2><span>Pick up</span> from your Location</h2>
+            <img src={pickup} alt="" />
+            <h3>Pickup</h3>
+          </div>
+          <div className="card">
+            <h2><span>Store</span> at the nearest and safest store house</h2>
+            <img className='second' src={store} alt="" />
+            <h3>Store</h3>
+          </div>
+          <div className="card">
+            <h2><span>Drop off</span> at your location</h2>
+            <img className='third' src={drop} alt="" />
+            <h3>DropOff</h3>
+          </div>
+         </div>
         </div>
       </div>
       <div className="oqpai-career__believe">
@@ -114,15 +128,15 @@ const Career = () => {
           </div>
           <div className="card">
             <img src={two} alt="" />
-            <p>The Power of <span>team</span> work!</p>
+            <p><span>Consistency</span> of work</p>
           </div>
           <div className="card">
             <img src={three} alt="" />
-            <p>The Power of <span>team</span> work!</p>
+            <p>Understanding what <span>users</span> want</p>
           </div>
           <div className="card">
             <img src={four} alt="" />
-            <p>The Power of <span>team</span> work!</p>
+            <p>Individuals with <span>Individuality</span></p>
           </div>
         </div>
       </div>
