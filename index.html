@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon_1.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OQPAI</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@600&family=Loved+by+the+King&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Shalimar&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- <script>
+        let index = 0;
+        const animateText = () => {
+            const txts = document.querySelector(".animate-text").children,
+                txtLen = txts.length;
+
+
+            for (let i = 0; i < txtLen; i++) {
+                txts[i].classList.remove("text-in", "text-out");
+            }
+            txts[index].classList.add("text-in");
+
+            setTimeout(() => {
+                txts[index].classList.add("text-out");
+            }, 2800);
+
+            setTimeout(() => {
+                if (index == txtLen - 1) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+                animateText();
+            }, 3000)
+
+        }
+        window.onload = animateText;
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+@keyframes cardFloating {
+    0% {
+        transform: translate(-50%, -0.9rem);
+    }
+    50% {
+        transform: translate(-50%, 0rem);
+    }
+    100% {
+        transform: translate(-50%, -0.9rem);
+    }
+}
+
+@keyframes textIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes textOut {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

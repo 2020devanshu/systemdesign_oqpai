@@ -1,0 +1,183 @@
+@import "./variables.scss";
+footer {
+    width: 100%;
+    padding: 3rem 5rem;
+    background: $primaryGradient;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .oqpai-footer__colLeft {
+        width: 45%;
+        display: flex;
+        // font-family: sans-serif;
+        .footer-thank__you {
+            width: 10rem;
+        }
+        .oqpai-footer__colLeft_content {
+            margin-left: 1.5em;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .footer-logo__container {
+                .footer-logo {
+                    img {
+                        width: 12rem;
+                    }
+                }
+                p {
+                    font-size: 1.1rem;
+                    margin-top: 1rem;
+                    color: #fff;
+                }
+            }
+            .footer-appLinks__container {
+                p {
+                    font-size: 1.1rem;
+                    color: #fff;
+                }
+                .footer-app__download {
+                    margin-top: 1rem;
+                    display: flex;
+                    img {
+                        height: 2.3rem;
+                        cursor: pointer;
+                        &:nth-child(2) {
+                            margin-left: 0.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .oqpai-footer__colRight {
+        width: 40%;
+        gap: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+            li {
+                font-size: 1.2rem;
+                color: #fff;
+            }
+        }
+        .footer-button {
+            background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+            outline: none;
+            border: none;
+            color: #0B6EFD;
+            padding: 0.75rem 1.434rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.1s ease-in-out;
+            &:active {
+                transform: translateY(2px);
+            }
+        }
+        .footer-connect {
+            p {
+                font-size: 1.1rem;
+                color: #fff;
+            }
+            .footer-social-links {
+                display: flex;
+                margin-top: 1.3rem;
+                gap: 3rem;
+                img {
+                    width: 2.2rem;
+                }
+            }
+        }
+    }
+    .footer-mobile__content {
+        display: none;
+        .links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            a {
+                font-size: 0.8rem;
+                color: white;
+            }
+            button {
+                background: linear-gradient(133.58deg, #E2EEFF 6.2%, #AECEFD 106.74%);
+                outline: none;
+                border: none;
+                color: #0B6EFD;
+                padding: 0.3rem 0.7rem;
+                border-radius: 10px;
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
+                &:active {
+                    transform: translateY(2px);
+                }
+            }
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            img {
+                width: 36%;
+            }
+        }
+        p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: white;
+        }
+        .footer-appLinks__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            p {
+                font-weight: bold;
+            }
+            .footer-app__download {
+                margin-top: 0.7rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.7rem;
+                img {
+                    width: 30%;
+                }
+            }
+        }
+        .footer-social-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            img {
+                width: 1.7rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 909px) {
+    footer {
+        padding: 1rem;
+        flex-direction: column-reverse;
+        .footer-mobile__content {
+            display: block;
+        }
+        .oqpai-footer__colLeft {
+            display: none;
+        }
+        .oqpai-footer__colRight {
+            display: none;
+        }
+    }
+}

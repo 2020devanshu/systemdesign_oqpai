@@ -1,0 +1,680 @@
+@import "./variables.scss";
+@import "./animations.scss";
+// Section Design Mixins
+@mixin sectionDesign($imageWidth) {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
+    .header {
+        margin-top: 2rem;
+        text-align: center;
+        text-transform: capitalize;
+        h1 {
+            color: $primaryColor;
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.6rem;
+            margin-top: 0.7rem;
+            color: $paragraphTextColor;
+        }
+    }
+    img {
+        width: $imageWidth;
+    }
+    @media screen and (max-width: 909px) {
+        height: auto;
+        .header {
+            width: 90%;
+            h1 {
+                font-size: 1.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@mixin reviewCard {
+    position: relative;
+    width: auto;
+    // height: 292px;
+    background: #ffffff;
+    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.05);
+    border-radius: 25.3423px;
+    padding: 3rem 4rem;
+    margin-bottom: 2rem;
+    color: #404040;
+    .profile {
+        position: absolute;
+        top: -4rem;
+        width: 120px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .review-stars {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-top: 1rem;
+        .star {
+            width: 16px;
+        }
+    }
+    h6 {
+        margin-top: 1.3rem;
+        font-size: 1.5rem;
+    }
+    p {
+        width: 100%;
+        font-weight: 300;
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        color: #404040;
+    }
+    @media screen and (max-width: 909px) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+        .profile {
+            width: 100px;
+            top: -3rem;
+        }
+        h6 {
+            margin-top: 2rem;
+        }
+    }
+}
+
+@mixin card {
+    position: relative;
+    background: $secondaryGradient;
+    height: 14.688rem;
+    width: 17rem;
+    border-radius: 1.584rem;
+    overflow: visible;
+    h6 {
+        width: 100%;
+        position: absolute;
+        font-size: 1.3rem;
+        bottom: 2.4rem;
+        color: #1a1a1a;
+        left: 50%;
+        max-lines: 2;
+        transform: translateX(-50%);
+    }
+    img {
+        width: 80%;
+        position: absolute;
+        top: -4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: cardFloating 2s infinite linear;
+    }
+    @media screen and (max-width: 909px) {
+        width: auto;
+        height: auto;
+        padding: 5.2rem 2rem;
+        img {
+            top: -2rem;
+        }
+        h6 {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@mixin mobileIntro {
+    display: none;
+    margin: 2rem 0;
+    .even {
+        display: flex;
+        position: relative;
+        height: 20rem;
+        img {
+            position: absolute;
+            width: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content {
+            position: relative;
+            width: 45%;
+            left: 7%;
+            top: 80%;
+            transform: translateY(-50%);
+            h2 {
+                font-size: 1.4rem;
+                color: $primaryColor;
+                text-align: end;
+            }
+            p {
+                text-align: end;
+                font-size: 0.9rem;
+                margin-top: 0.2rem;
+                color: #404040;
+            }
+        }
+    }
+    .odd {
+        display: flex;
+        position: relative;
+        height: 18rem;
+        img {
+            position: absolute;
+            width: 50%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .content {
+            position: absolute;
+            width: 45%;
+            right: 7%;
+            top: 50%;
+            transform: translateY(-50%);
+            h2 {
+                font-size: 1.4rem;
+                color: $primaryColor;
+                text-align: start;
+            }
+            p {
+                text-align: start;
+                font-size: 0.9rem;
+                margin-top: 0.2rem;
+                color: #404040;
+            }
+        }
+    }
+    @media screen and (max-width: 909px) {
+        display: block;
+    }
+}
+
+// Welcome Section
+.oqpai-home__section {
+    width: 100%;
+    height: calc(100vh - 10vh);
+    background: url("../assets/welcome/welcome-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .oqpai-welcome__content {
+        width: 80%;
+        .col-left {
+            h3 {
+                color: $secondaryColor;
+                font-size: 2.5rem;
+                line-height: 3rem;
+                font-weight: bold;
+            }
+            h1 {
+                color: $primaryColor;
+                font-size: 4rem;
+                line-height: 5rem;
+                font-weight: bold;
+                overflow: hidden;
+                span {
+                    // display: inline-block;
+                    display: none;
+                }
+                span.text-in {
+                    display: block;
+                    animation: textIn 0.5s ease;
+                }
+                span.text-out {
+                    animation: textOut 0.5s ease;
+                }
+            }
+            p {
+                color: $primaryColor;
+                font-size: 2rem;
+                margin-top: 1rem;
+            }
+        }
+        .download__apps {
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            img {
+                cursor: pointer;
+                width: 20%;
+                &:nth-child(1) {
+                    margin-right: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+// Intro Section
+.oqpai-intro__section {
+    width: 100%;
+    height: calc(100vh - 10vh);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    .oqpai-intro__header {
+        margin-top: 2rem;
+        text-align: center;
+        h1 {
+            color: $primaryColor;
+            font-size: 4rem;
+            font-weight: bold;
+            overflow: hidden;
+        }
+        p {
+            font-size: 1.6rem;
+            margin-top: 0.7rem;
+            color: $paragraphTextColor;
+        }
+    }
+    .oqpai-intro__mobile {
+        @include mobileIntro();
+    }
+    .oqpai-intro__steps {
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-image: url("../assets/welcome/intro_wave.png");
+        .oqpai-intro__stepsContent {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: auto;
+            .intro-card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 80%;
+                }
+                h6 {
+                    color: $primaryColor;
+                    font-size: 1.2rem;
+                }
+                .hover-card {
+                    position: absolute;
+                    top: 70%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    width: 15rem;
+                    padding: 1rem;
+                    border-radius: 1.584rem;
+                    opacity: 0;
+                    box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.05);
+                    transition: all 0.5s ease-in-out;
+                    user-select: none;
+                    h4 {
+                        color: $primaryColor;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        margin-bottom: 0.6rem;
+                    }
+                    p {
+                        text-align: center;
+                        color: #6b6b6b;
+                        font-size: 1rem;
+                    }
+                }
+                &:hover {
+                    .hover-card {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Download Our App
+.oqpai-download__app {
+    @include sectionDesign(45%);
+    height: auto !important;
+    h1 {
+        color: $primaryColor;
+        font-size: 4rem;
+        line-height: 5rem;
+        font-weight: bold;
+        overflow: hidden;
+        span {
+            display: none;
+        }
+        span.text-in {
+            display: block;
+            animation: textIn 0.5s ease;
+        }
+        span.text-out {
+            animation: textOut 0.5s ease;
+        }
+    }
+    img {
+        margin-top: 3rem;
+    }
+}
+
+// Our Plans
+.oqpai-our__plans {
+    @include sectionDesign(auto);
+    .oqpai-plans {
+        overflow: hidden;
+        height: 20rem;
+        align-items: end;
+        display: -webkit-flex;
+        -webkit-align-items: end;
+        width: 80%;
+        .card {
+            @include card();
+        }
+    }
+}
+
+// Secure and Safe
+.oqpai-secure__safe {
+    @include sectionDesign(auto);
+    .fade {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #1a1a1a;
+    }
+    .oqpai-cards {
+        position: relative;
+        // overflow-x:
+        height: 20rem;
+        margin-top: -3rem;
+        align-items: end;
+        display: -webkit-flex;
+        -webkit-align-items: end;
+        width: 80%;
+        overflow: hidden;
+        .card {
+            @include card();
+            img {
+                // overflow: visible !important;
+                width: 70%;
+            }
+        }
+    }
+    // .owl-nav {
+    //     z-index: 100 !important;
+    //     width: 100%;
+    //     position: absolute !important;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-between;
+    //     // background-color: #000;
+    //     color: #fff;
+    //     margin: 0;
+    //     transition: all 0.3s ease-in-out;
+    //     button {
+    //         border: none;
+    //         color: white;
+    //         background: $primaryGradient;
+    //         width: 3rem;
+    //         height: 3rem;
+    //         display: flex;
+    //         font-size: 3rem;
+    //         align-items: center;
+    //         justify-content: center;
+    //         border-radius: 50%;
+    //         cursor: pointer;
+    //         box-shadow: 0px 0px 24.3294px #83B6FF, inset 0px 0px 24.3294px rgba(213, 230, 255, 0.35);
+    //         span {
+    //             margin-bottom: 0.4rem;
+    //         }
+    //     }
+    // }
+}
+
+// Our Pricing
+.oqpai-our__pricing {
+    @include sectionDesign(auto);
+    .oqpai-cards {
+        // overflow-x:
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.6rem;
+        width: 90%;
+        .pricing__card {
+            background: $primaryGradient;
+            height: 14.688rem;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 1.584rem;
+            h6 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+            &:first-child {
+                border-bottom-left-radius: 7rem;
+            }
+            &:last-child {
+                border-bottom-right-radius: 7rem;
+            }
+        }
+    }
+}
+
+// Reviews
+.oqpai-reviews {
+    @include sectionDesign(auto);
+    .owl-item.center {
+        transform: scale(1) !important;
+    }
+    .owl-item {
+        transform: scale(0.9) !important;
+    }
+    .owl-item.cloned {
+        transform: scale(0.9) !important;
+    }
+    .owl-item.center.cloned {
+        transform: scale(1) !important;
+    }
+    .oqpai-cards {
+        // overflow-x:
+        height: 22rem;
+        display: flex;
+        align-items: end;
+        width: 100%;
+        overflow: hidden;
+        .reviewCard {
+            @include reviewCard();
+        }
+    }
+    .owl-dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        .owl-dot {
+            span {
+                width: 20px !important;
+                background: linear-gradient(133.58deg, #e2eeff 6.2%, #aecefd 106.74%);
+                border-radius: 16.1909px;
+            }
+        }
+        .active {
+            span {
+                width: 50px !important;
+                background: $primaryGradient !important;
+                border-radius: 16.1909px;
+            }
+        }
+    }
+}
+
+.oqpai-our-partners {
+    @include sectionDesign(auto);
+    height: auto !important;
+    margin-bottom: 4rem;
+    .oqpai-partner__content {
+        margin-top: 4rem;
+        width: 80%;
+        margin-inline: auto;
+        .companies {
+            display: grid;
+            grid-gap: 1.4rem;
+            place-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+            .company {
+                img {
+                    cursor: pointer;
+                    width: 8rem;
+                    filter: grayscale(1);
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        filter: grayscale(0);
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 909px) {
+        .oqpai-partner__content {
+            width: 90%;
+            .companies {
+                grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+                .company {
+                    img {
+                        width: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive
+@media screen and (max-width: 909px) {
+    .oqpai-home__section {
+        background: url("../assets/welcome/welcome-mobile.png");
+        flex-direction: column;
+        background-size: cover;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: end;
+        display: -webkit-flex;
+        -webkit-justify-content: end;
+        height: 60vh;
+        .oqpai-welcome__content {
+            width: 90%;
+            .col-left {
+                margin-bottom: 2rem;
+                text-align: center;
+                h3 {
+                    font-size: 1.3rem;
+                    line-height: normal;
+                }
+                h1 {
+                    font-size: 1.8rem;
+                    line-height: normal;
+                }
+                p {
+                    font-size: 1rem;
+                }
+            }
+            .download__apps {
+                margin-top: 1.3rem;
+                img {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    .oqpai-intro__section {
+        height: auto;
+        .oqpai-intro__header {
+            width: 90%;
+            h1 {
+                font-size: 1.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+        .oqpai-intro__steps {
+            display: none;
+        }
+    }
+    .oqpai-our__plans {
+        .oqpai-plans {
+            width: 90%;
+            margin: 2rem 0;
+            display: flex;
+            height: 13rem;
+        }
+    }
+    .oqpai-secure__safe {
+        .oqpai-cards {
+            width: 90%;
+            margin: 2rem 0;
+            display: flex;
+            height: 13rem;
+        }
+    }
+    .oqpai-download__app {
+        @include sectionDesign(80%);
+        img {
+            margin: 2rem 0;
+        }
+    }
+    .oqpai-our__pricing {
+        .oqpai-cards {
+            margin: 3rem 0;
+            gap: 0.8rem;
+            grid-template-columns: repeat(2, 1fr);
+            .pricing__card {
+                height: auto;
+                padding: 2rem;
+                border-radius: 1rem;
+                h6 {
+                    font-size: 0.8rem;
+                }
+                p {
+                    font-size: 1.4rem;
+                }
+                &:first-child {
+                    border-top-left-radius: 3rem;
+                    border-bottom-left-radius: 1rem;
+                }
+                &:nth-child(2) {
+                    border-top-right-radius: 3rem;
+                    border-bottom-left-radius: 1rem;
+                }
+                &:nth-child(3) {
+                    border-bottom-left-radius: 3rem;
+                    // border-bottom-left-radius: 1rem;
+                }
+                &:last-child {
+                    border-bottom-right-radius: 3rem;
+                }
+            }
+        }
+    }
+}

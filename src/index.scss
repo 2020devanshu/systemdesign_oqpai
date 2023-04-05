@@ -1,0 +1,19 @@
+@import './styles/fonts.scss';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #f0f0f052;
+    font-family: 'DejaVu Sans';
+}
+
+.owl-carousel .owl-stage-outer {
+    overflow: visible;
+}
+
+// .oqpai-homepage {}
