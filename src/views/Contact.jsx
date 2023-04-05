@@ -1,11 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '../styles/Contact.scss'
 import callIcon from '../assets/contact/call.png';
 import support from '../assets/contact/support.png';
 import { database } from '../firebase/firebase';
 import { collection, addDoc } from "firebase/firestore";
+import Model from '../components/Model';
 
 const Contact = () => {
+
+    const text = useRef();
+    const [model, setModel] = useState(false);
+    
+    const openModel = () => {
+        console.log('Reached')
+        setModel(true);
+    }
+    
+    const closeModel = () => {
+        setModel(false);
+    }
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -13,28 +26,28 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const [selected, setSelected] = useState(null);
 
-    const faqData = [
-        {
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
-        },
-        {
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
-        },
-        {
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
-        },
-        {
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
-        },
-        {
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
-        },
-    ];
+    // const faqData = [
+    //     {
+    //         question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    //         answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
+    //     },
+    //     {
+    //         question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    //         answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
+    //     },
+    //     {
+    //         question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    //         answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
+    //     },
+    //     {
+    //         question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    //         answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
+    //     },
+    //     {
+    //         question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+    //         answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, volutpat, congue in sagittis. Nulla eget suspendisse mattis vulputate eu adipiscing in venenatis.o, malesuada sceler"
+    //     },
+    // ];
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -68,6 +81,7 @@ const Contact = () => {
 
     return (
         <div className="oqpai-contact">
+            <Model closeModel={closeModel} open={model} />
             <section className="oqpai-contact__intro">
                 <div className="contact-intro">
                     <div className="content-left">
@@ -123,7 +137,9 @@ const Contact = () => {
             </section>
             <section className='oqpai-contact__download'>
                 <h3>Store Luggage anytime, anywhere with <br />OQPAI</h3>
-                <button className="download_button">Download</button>
+                <a>
+                <button className="download_button" onClick={openModel}>Download</button>
+                </a>
             </section>
         </div>
     )

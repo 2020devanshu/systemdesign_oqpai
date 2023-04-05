@@ -98,7 +98,9 @@ const Career = () => {
         <div className="intro-content">
           <p className='hashtag'>#GrowWithUs</p>
           <p className='header'>It's your time to <strong>O<span>Q</span>PAI</strong> a seat towards learning and success!</p>
+          <a href = "https://docs.google.com/forms/d/e/1FAIpQLSd1K5Dcr7HS6JDI4Kv2kirlO3dhHQ4EgQ-iHAATbovGvbJr8Q/viewform" target="_blank" rel="noopener noreferrer">
           <button className='view-opening'>View Openings</button>
+          </a>
         </div>
       </div>
       <div className="oqpai-career__luggage">
@@ -182,17 +184,23 @@ const Career = () => {
           <div className="card sfirst">
             <img src={job1} alt="Job 1" />
             <h4>Marketing</h4>
+            <a href = "https://docs.google.com/forms/d/e/1FAIpQLSd1K5Dcr7HS6JDI4Kv2kirlO3dhHQ4EgQ-iHAATbovGvbJr8Q/viewform" target="_blank" rel="noopener noreferrer">
             <button className='appy-button'>Apply Now</button>
+            </a>
           </div>
           <div className="card second">
             <img src={job2} alt="Job 2" />
             <h4>Graphic</h4>
+            <a href = "https://docs.google.com/forms/d/e/1FAIpQLSd1K5Dcr7HS6JDI4Kv2kirlO3dhHQ4EgQ-iHAATbovGvbJr8Q/viewform" target="_blank" rel="noopener noreferrer">
             <button className='appy-button'>Apply Now</button>
+            </a>
           </div>
           <div id='card' className="card third">
             <img src={job3} alt="Job 3" />
             <h4>Development</h4>
+            <a href = "https://docs.google.com/forms/d/e/1FAIpQLSd1K5Dcr7HS6JDI4Kv2kirlO3dhHQ4EgQ-iHAATbovGvbJr8Q/viewform" target="_blank" rel="noopener noreferrer">
             <button className='appy-button'>Apply Now</button>
+            </a>
           </div>
         </OwlCarousel>
       </section>
@@ -243,17 +251,19 @@ const Career = () => {
       </section>
       <section className="oqpai-community">
         <h2>Join Our Team To Work At the Most <span>chilled</span> Company ever</h2>
+        <a href = "https://docs.google.com/forms/d/e/1FAIpQLSd1K5Dcr7HS6JDI4Kv2kirlO3dhHQ4EgQ-iHAATbovGvbJr8Q/viewform" target="_blank" rel="noopener noreferrer">
         <button className='view-opening'>View Openings</button>
+        </a>
       </section>
       <section className="oqpai-connect">
         <h1 className='header'>
           Connect with us on
         </h1>
         <div className="social-links">
-          <img src={Facebook} alt="Facebook" />
-          <img src={Instagram} alt="Facebook" />
-          <img src={Linkedin} alt="Facebook" />
-          <img src={Youtube} alt="Facebook" />
+        <a href="https://www.facebook.com/oqpaisystem" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Facebook" /></a>
+        <a href="https://www.instagram.com/oqpaiofficial/?hl=en" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="Instagram" /></a>
+        <a href="https://www.linkedin.com/company/oqpai/" target="_blank" rel="noopener noreferrer"><img src={Linkedin} alt="Linkedin" /></a>
+        <a href="https://www.youtube.com/channel/UCCzkm8VwHBZGjFB--E0QsMw" target="_blank" rel="noopener noreferrer"><img src={Youtube} alt="Youtube" /></a>
         </div>
       </section>
     </div>

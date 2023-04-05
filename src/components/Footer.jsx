@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import appstore from '../assets/welcome/app_store.png';
 import googleplay from '../assets/welcome/google_play.png';
 import thankYou from '../assets/thank_you.png';
@@ -8,11 +8,26 @@ import Linkedin from '../assets/footer/Linkedin.png';
 import Youtube from '../assets/footer/Youtube.png';
 import logo from '../assets/logo.png'
 import '../styles/Footer.scss'
+import Model from '../components/Model';
 
 const Footer = () => {
+
+    const text = useRef();
+    const [model, setModel] = useState(false);
+    
+    const openModel = () => {
+        console.log('Reached')
+        setModel(true);
+    }
+    
+    const closeModel = () => {
+        setModel(false);
+    }
+
     return (
         <footer>
             <div className="footer-mobile__content">
+            <Model closeModel={closeModel} open={model} />
                 <ul className="links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/">About</a></li>
@@ -27,8 +42,10 @@ const Footer = () => {
                 <div className="footer-appLinks__container">
                     <p>Download The APP From</p>
                     <div className="footer-app__download">
-                        <img src={appstore} alt="Apple Store" />
-                        <img src={googleplay} alt="Google Play Store" />
+                        <a>
+                    <img onClick={openModel} src={appstore} alt="Apple Store" />
+                    <img onClick={openModel} src={googleplay} alt="Google PlayStore" />
+                    </a>
                     </div>
                 </div>
                 <div className="footer-social-links">
@@ -49,29 +66,33 @@ const Footer = () => {
                     <div className="footer-appLinks__container">
                         <p>Download The APP From</p>
                         <div className="footer-app__download">
-                            <img src={appstore} alt="Apple Store" />
-                            <img src={googleplay} alt="Google Play Store" />
+                        <a>
+                        <img onClick={openModel} src={appstore} alt="Apple Store" />
+                        <img onClick={openModel} src={googleplay} alt="Google PlayStore" />
+                        </a>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="oqpai-footer__colRight">
-                <ul className="footer-links">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Career</li>
-                    <li>Contact Us</li>
+            <ul className="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#/about">About</a></li>
+                    <li><a href="/#/career">Career</a></li>
+                    <li><a href="/#/contact-us">Contact Us</a></li>
                 </ul>
                 <div>
-                    <button className='footer-button'>Become a Partners</button>
+                <a href="/#/partner">
+              <button className='footer-button'>Become a Partner</button>
+              </a>
                 </div>
                 <div className="footer-connect">
                     <p>Connect With Us On</p>
                     <div className="footer-social-links">
-                        <img src={Facebook} alt="Facebook" />
-                        <img src={Instagram} alt="Facebook" />
-                        <img src={Linkedin} alt="Facebook" />
-                        <img src={Youtube} alt="Facebook" />
+                        <a href="https://www.facebook.com/oqpaisystem" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/oqpaiofficial/?hl=en" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="Instagram" /></a>
+                        <a href="https://www.linkedin.com/company/oqpai/" target="_blank" rel="noopener noreferrer"><img src={Linkedin} alt="Linkedin" /></a>
+                        <a href="https://www.youtube.com/channel/UCCzkm8VwHBZGjFB--E0QsMw" target="_blank" rel="noopener noreferrer"><img src={Youtube} alt="Youtube" /></a>
                     </div>
                 </div>
             </div>

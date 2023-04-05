@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import '../styles/Partner.scss';
 import intro1 from '../assets/partner/intro/1.png';
 import intro2 from '../assets/partner/intro/2.png';
-import delivery1 from '../assets/partner/delivery/1.png';
-import delivery2 from '../assets/partner/delivery/2.png';
-import delivery3 from '../assets/partner/delivery/3.png';
-import storage1 from '../assets/partner/storage/1.png';
-import storage2 from '../assets/partner/storage/2.png';
-import storage3 from '../assets/partner/storage/3.png';
 import { database } from '../firebase/firebase';
 import { collection, addDoc } from "firebase/firestore";
+import Model from '../components/Model';
 
 const Partner = () => {
+
+    const text = useRef();
+    const [model, setModel] = useState(false);
+    
+    const openModel = () => {
+        console.log('Reached')
+        setModel(true);
+    }
+    
+    const closeModel = () => {
+        setModel(false);
+    }
+
     const [name, setName] = useState("");
     const [number, setNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -116,6 +124,7 @@ const Partner = () => {
     }
     return (
         <div className='oqpai-partner'>
+            <Model closeModel={closeModel} open={model} />
             {/* <section className="oqpai-partner__intro">
                 <div className="intro-content">
                     <h1>With <div className='logo'>O<span>Q</span>PAI</div> you can become</h1>
@@ -218,7 +227,9 @@ const Partner = () => {
             </section>
             <section className='oqpai-partner__download'>
                 <h3>Store Luggage anytime, anywhere with <br />OQPAI</h3>
-                <button className="download_button">Download</button>
+                <a>
+                <button className="download_button" onClick={openModel}>Download</button>
+                </a>
             </section>
         </div>
     )
