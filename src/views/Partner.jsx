@@ -86,6 +86,10 @@ const Partner = () => {
 
     const submitForm = async (e) => {
         e.preventDefault();
+        if (selected === '' || selected === null){
+            alert('Please select either Delivery Partner or Storage Partner');
+        }
+        else {
         setLoading(true);
         await addDoc(collection(database, 'partnerForm'), {
         // await database.collection("partnerForm").add({
@@ -109,6 +113,7 @@ const Partner = () => {
             alert("Something Went Wrong");
         })
     }
+}
 
     function selectItem(item) {
         setSelect("");
@@ -120,7 +125,6 @@ const Partner = () => {
             setSelect("");
         }
 
-        console.log(selected);
     }
     return (
         <div className='oqpai-partner'>
@@ -205,8 +209,8 @@ const Partner = () => {
                     </h1>
                     <form onSubmit={submitForm}>
                         <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder='Enter Full Name*' required />
-                        <input value={number} onChange={(e) => setNumber(e.target.value)} type="phone" placeholder='Enter Contact Number*' required />
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter your E-mail*' required />
+                        <input value={number} onChange={(e) => setNumber(e.target.value)} type="phone" pattern="[6-9]{1}[0-9]{9}" placeholder='Enter Contact Number*' required />
+                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Enter Your E-mail*' required />
                         <div className='apply'>
                             <p className='head'>I am Applying For</p>
                             <div className="select-cards">

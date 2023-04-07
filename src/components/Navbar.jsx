@@ -44,7 +44,7 @@ const Navbar = () => {
                         <ul className='oqpai-nav-links'>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
-                            <li><Link to="/carrer">Career</Link></li>
+                            <li><Link to="/career">Career</Link></li>
                             <li><Link to="/contact-us">Contact Us</Link></li>
                         </ul>
                         <Link to='/partner' className="oqpai-partner">
@@ -73,7 +73,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <img src={career} alt="" />
-                        <Link to='/carrer'>Career</Link>
+                        <Link to='/career'>Career</Link>
                     </li>
                     <li>
                         <img src={contact} alt="" />
