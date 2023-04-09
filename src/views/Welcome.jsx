@@ -221,28 +221,28 @@ const Welcome = () => {
 
                 <div className="oqpai-intro__mobile">
                     <div className="odd">
-                        <img src={mobile1} alt="" />
+                        <img src={intro1} alt="" />
                         <div className="content">
-                            <h2>4.Drop Off</h2>
-                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                            <h2>1.Book</h2>
+                            <p>Book Luggage Storage from OQPAI application in just few clicks!</p>
                         </div>
                     </div>
                     <div className="even">
-                        <img src={mobile4} alt="" />
+                        <img src={intro2} alt="" />
                         <div className="content">
-                            <h2>4.Drop Off</h2>
-                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                            <h2>2.Pick Up</h2>
+                            <p>Our Delivery agent will come to pickup your Luggage in 12 minutes</p>
                         </div>
                     </div>
-                    <div className="odd">
-                        <img src={mobile1} alt="" />
+                    <div className="odd">waaa
+                        <img src={intro3} alt="" />
                         <div className="content">
-                            <h2>4.Drop Off</h2>
-                            <p>Our delivery agent will come at your location when you request for drop off.</p>
+                            <h2>3.Enjoy</h2>
+                            <p>Enjoy your journey hassel free without worring about Luggage.wwwwwwww</p>
                         </div>
                     </div>
                     <div className="even">
-                        <img src={mobile4} alt="" />
+                        <img src={intro4} alt="" />
                         <div className="content">
                             <h2>4.Drop Off</h2>
                             <p>Our delivery agent will come at your location when you request for drop off.</p>

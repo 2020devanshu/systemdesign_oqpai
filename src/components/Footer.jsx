@@ -49,10 +49,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-social-links">
-                    <img src={Facebook} alt="Facebook" />
-                    <img src={Instagram} alt="Facebook" />
-                    <img src={Linkedin} alt="Facebook" />
-                    <img src={Youtube} alt="Facebook" />
+                    <a href="https://www.facebook.com/oqpaisystem" target="_blank" rel="noopener noreferrer"><img src={Facebook} alt="Facebook" /></a>
+                    <a href="https://www.instagram.com/oqpaiofficial/?hl=en" target="_blank" rel="noopener noreferrer"><img src={Instagram} alt="Instagram" /></a>
+                    <a href="https://www.linkedin.com/company/oqpai/" target="_blank" rel="noopener noreferrer"><img src={Linkedin} alt="Linkedin" /></a>
+                    <a href="https://www.youtube.com/channel/UCCzkm8VwHBZGjFB--E0QsMw" target="_blank" rel="noopener noreferrer"><img src={Youtube} alt="Youtube" /></a>
                 </div>
             </div>
             <div className="oqpai-footer__colLeft">
